@@ -21,8 +21,10 @@ private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;
     Ui::hariki_and_tetrisClass ui_game;
+
 private slots:
     void start_game_slot();
     void record_slot();
     void exit_slot();
+    void new_game_slot();
 };

@@ -64,7 +64,7 @@ void hariki2::start_game_slot()
     QMainWindow* game = new QMainWindow;
     ui_game.setupUi(game);
     game->show();
-    connect(ui_game.start_game, SIGNAL(clicked()), this, SLOT(start_game_slot_now()));
+    connect(ui_game.start_game, SIGNAL(clicked()), this, SLOT(new_game_slot()));
     game->showFullScreen();
     HDC hdcScreen = GetDC(NULL);
     int dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
@@ -133,16 +133,6 @@ void hariki2::start_game_slot()
     ui_game.graphicsView_7->setGeometry(group_pol_7_qrect);
     ui_game.graphicsView_8->setGeometry(group_pol_8_qrect);
     ui_game.graphicsView_9->setGeometry(group_pol_9_qrect);
-    //------------------------console game-------------------------------------------------------
-    krug krug11;
-    krug krug12;
-    krug krug13;
-    krug krug21;
-    krug krug22;
-    krug krug23;
-    krug krug31;
-    krug krug32;
-    krug krug33;
 }
 
 
@@ -173,4 +163,19 @@ void hariki2::record_slot()
 void hariki2::exit_slot()
 {
     QMainWindow::close();
+}
+
+void hariki2::new_game_slot()
+{
+    //------------------------console game-------------------------------------------------------
+    krug krug11;
+    krug krug12;
+    krug krug13;
+    krug krug21;
+    krug krug22;
+    krug krug23;
+    krug krug31;
+    krug krug32;
+    krug krug33;
+    int test12324;
 }
