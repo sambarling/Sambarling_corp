@@ -136,6 +136,10 @@ void hariki2::start_game_slot()
 }
 
 
+void hariki2::update()
+{
+}
+
 void hariki2::record_slot()
 {
     QDialog* record = new QDialog;
@@ -177,5 +181,14 @@ void hariki2::new_game_slot()
     krug krug31;
     krug krug32;
     krug krug33;
-    int test12324;
+    krug11.rand_color();
+    krug11.init();
+    krug12.init();
+    krug13.init();
+    krug21.init();
+    krug22.init();
+    krug23.init();
+    krug31.init();
+    krug32.init();
+    krug33.init();
 }

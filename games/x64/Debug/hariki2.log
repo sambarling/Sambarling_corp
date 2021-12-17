@@ -7,10 +7,9 @@
   hariki2.cpp
   krug.cpp
   main.cpp
-C:\Users\Дмитрий\Desktop\тест ебальника\krug.cpp(76): warning C4715: krug::select_pix: значение возвращается не при всех путях выполнения
-C:\Users\Дмитрий\Desktop\тест ебальника\krug.cpp(159): warning C4700: использована неинициализированная локальная переменная "test"
-C:\Users\Дмитрий\Desktop\тест ебальника\krug.cpp(151): warning C4715: krug::select_name_pix: значение возвращается не при всех путях выполнения
+C:\Users\NoBody\Desktop\игра\krug.cpp(76): warning C4715: krug::select_pix: значение возвращается не при всех путях выполнения
+C:\Users\NoBody\Desktop\игра\krug.cpp(151): warning C4715: krug::select_name_pix: значение возвращается не при всех путях выполнения
   qrc_hariki2.cpp
   qrc_hariki_and_tetris.cpp
   moc_hariki2.cpp
-  hariki2.vcxproj -> C:\Users\Дмитрий\Desktop\тест ебальника\x64\Debug\hariki2.exe
+  hariki2.vcxproj -> C:\Users\NoBody\Desktop\игра\x64\Debug\hariki2.exe

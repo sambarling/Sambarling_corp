@@ -3,19 +3,23 @@
 #include <QApplication>
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 class krug
 {
 public:
 	krug()
 	{
-		int color;
-		int tone;
+
 	}
 	QPixmap select_pix(int color,int tone);
 	QString select_name_pix(int color, int tone);
 	int rand_color();
 	int rand_tone();
+	void writes(int colors, int tones);
+	void init();
 private:
+	int color;
+	int tone;
 	QPixmap pic11 = (QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/Verdun Green.png");
 	QPixmap pic12 = (QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/Buddha Gold.png");
 	QPixmap pic13 = (QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/Yellow.png");
