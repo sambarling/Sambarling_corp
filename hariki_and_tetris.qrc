@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>bg.png</file>
+    <file>spy.png</file>
+    <file>test.png</file>
+    <file>tree-3358468.png</file>
+  </qresource>
+</RCC>
