@@ -1,32 +1,31 @@
-# Prerequisites
-*.d
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Created by https://www.toptal.com/developers/gitignore/api/windows
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows
 
-# Precompiled Headers
-*.gch
-*.pch
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# Dump file
+*.stackdump
 
-# Fortran module files
-*.mod
-*.smod
+# Folder config file
+[Dd]esktop.ini
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
 
-# Executables
-*.exe
-*.out
-*.app
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.toptal.com/developers/gitignore/api/windows
