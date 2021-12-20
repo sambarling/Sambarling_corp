@@ -16,7 +16,7 @@ class hariki2 : public QMainWindow
 
 public:
     hariki2(QWidget *parent = Q_NULLPTR);
-
+    void update();
 private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;

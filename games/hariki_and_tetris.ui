@@ -95,122 +95,148 @@
      </property>
     </item>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView">
+   <widget class="QLabel" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>500</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/newPrefix/bg.png);
-</string>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="graphicsView_2">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>410</y>
-      <width>256</width>
-      <height>192</height>
+      <x>210</x>
+      <y>490</y>
+      <width>49</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView_3">
+   <widget class="QLabel" name="graphicsView_2">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>290</y>
-      <width>256</width>
-      <height>192</height>
+      <x>410</x>
+      <y>470</y>
+      <width>49</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView_4">
+   <widget class="QLabel" name="graphicsView_3">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>190</y>
-      <width>256</width>
-      <height>192</height>
+      <x>510</x>
+      <y>480</y>
+      <width>49</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
     </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView_5">
+   <widget class="QLabel" name="graphicsView_4">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>540</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="graphicsView_5">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>530</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="graphicsView_6">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>540</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="graphicsView_7">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>590</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="graphicsView_8">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>590</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>90</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="graphicsView_6">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
       <y>590</y>
-      <width>256</width>
-      <height>192</height>
+      <width>49</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
     </property>
-   </widget>
-   <widget class="QGraphicsView" name="graphicsView_7">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>540</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="graphicsView_8">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>480</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="graphicsView_9">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>360</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/newPrefix/bg.png);</string>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

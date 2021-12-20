@@ -155,11 +155,34 @@ int krug::rand_color()
 		time_t now = time(0);
 		tm* ltm = localtime(&now);
 		int secs=ltm->tm_sec;
-		int test;
-		return test;
+		srand(secs);
+		int sl = rand();
+		sl = sl % 4;
+		if (sl == 0) sl = 1;
+		else;
+		return sl;
 }
 
 int krug::rand_tone()
 {
-	return 0;
+	int sl = rand();
+	sl = sl % 4;
+	if (sl == 0) sl = 1;
+	else;
+	return sl;
+}
+
+void krug::writes(int colors, int tones)
+{
+	color = colors;
+	tone = tones;
+}
+
+void krug::init()
+{
+	int cl;
+	int ot;
+	cl = rand_tone();
+	ot = rand_tone();
+	writes(cl, ot);
 }

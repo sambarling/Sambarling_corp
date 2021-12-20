@@ -12,8 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
@@ -28,15 +28,15 @@ public:
     QGroupBox *groupBox_2;
     QPushButton *start_game;
     QComboBox *time_game;
-    QGraphicsView *graphicsView;
-    QGraphicsView *graphicsView_2;
-    QGraphicsView *graphicsView_3;
-    QGraphicsView *graphicsView_4;
-    QGraphicsView *graphicsView_5;
-    QGraphicsView *graphicsView_6;
-    QGraphicsView *graphicsView_7;
-    QGraphicsView *graphicsView_8;
-    QGraphicsView *graphicsView_9;
+    QLabel *graphicsView;
+    QLabel *graphicsView_2;
+    QLabel *graphicsView_3;
+    QLabel *graphicsView_4;
+    QLabel *graphicsView_5;
+    QLabel *graphicsView_6;
+    QLabel *graphicsView_7;
+    QLabel *graphicsView_8;
+    QLabel *label_9;
 
     void setupUi(QMainWindow *hariki_and_tetrisClass)
     {
@@ -68,43 +68,42 @@ public:
         time_game->addItem(QString());
         time_game->setObjectName(QString::fromUtf8("time_game"));
         time_game->setGeometry(QRect(400, 170, 71, 22));
-        graphicsView = new QGraphicsView(centralWidget);
+        graphicsView = new QLabel(centralWidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-        graphicsView->setGeometry(QRect(60, 500, 256, 192));
-        graphicsView->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);\n"
-""));
-        graphicsView_2 = new QGraphicsView(centralWidget);
+        graphicsView->setGeometry(QRect(210, 490, 49, 16));
+        graphicsView->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
+        graphicsView_2 = new QLabel(centralWidget);
         graphicsView_2->setObjectName(QString::fromUtf8("graphicsView_2"));
-        graphicsView_2->setGeometry(QRect(250, 410, 256, 192));
+        graphicsView_2->setGeometry(QRect(410, 470, 49, 16));
         graphicsView_2->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
-        graphicsView_3 = new QGraphicsView(centralWidget);
+        graphicsView_3 = new QLabel(centralWidget);
         graphicsView_3->setObjectName(QString::fromUtf8("graphicsView_3"));
-        graphicsView_3->setGeometry(QRect(350, 290, 256, 192));
+        graphicsView_3->setGeometry(QRect(510, 480, 49, 16));
         graphicsView_3->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
-        graphicsView_4 = new QGraphicsView(centralWidget);
+        graphicsView_4 = new QLabel(centralWidget);
         graphicsView_4->setObjectName(QString::fromUtf8("graphicsView_4"));
-        graphicsView_4->setGeometry(QRect(490, 190, 256, 192));
+        graphicsView_4->setGeometry(QRect(240, 540, 49, 16));
         graphicsView_4->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
-        graphicsView_5 = new QGraphicsView(centralWidget);
+        graphicsView_5 = new QLabel(centralWidget);
         graphicsView_5->setObjectName(QString::fromUtf8("graphicsView_5"));
-        graphicsView_5->setGeometry(QRect(560, 90, 256, 192));
+        graphicsView_5->setGeometry(QRect(410, 530, 49, 16));
         graphicsView_5->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
-        graphicsView_6 = new QGraphicsView(centralWidget);
+        graphicsView_6 = new QLabel(centralWidget);
         graphicsView_6->setObjectName(QString::fromUtf8("graphicsView_6"));
-        graphicsView_6->setGeometry(QRect(100, 590, 256, 192));
+        graphicsView_6->setGeometry(QRect(520, 540, 49, 16));
         graphicsView_6->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
-        graphicsView_7 = new QGraphicsView(centralWidget);
+        graphicsView_7 = new QLabel(centralWidget);
         graphicsView_7->setObjectName(QString::fromUtf8("graphicsView_7"));
-        graphicsView_7->setGeometry(QRect(320, 540, 256, 192));
+        graphicsView_7->setGeometry(QRect(240, 590, 49, 16));
         graphicsView_7->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
-        graphicsView_8 = new QGraphicsView(centralWidget);
+        graphicsView_8 = new QLabel(centralWidget);
         graphicsView_8->setObjectName(QString::fromUtf8("graphicsView_8"));
-        graphicsView_8->setGeometry(QRect(490, 480, 256, 192));
+        graphicsView_8->setGeometry(QRect(410, 590, 49, 16));
         graphicsView_8->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
-        graphicsView_9 = new QGraphicsView(centralWidget);
-        graphicsView_9->setObjectName(QString::fromUtf8("graphicsView_9"));
-        graphicsView_9->setGeometry(QRect(550, 360, 256, 192));
-        graphicsView_9->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
+        label_9 = new QLabel(centralWidget);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setGeometry(QRect(560, 590, 49, 16));
+        label_9->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
         hariki_and_tetrisClass->setCentralWidget(centralWidget);
 
         retranslateUi(hariki_and_tetrisClass);
@@ -123,6 +122,15 @@ public:
         time_game->setItemText(2, QCoreApplication::translate("hariki_and_tetrisClass", "15 \320\274\320\270\320\275\321\203\321\202", nullptr));
         time_game->setItemText(3, QCoreApplication::translate("hariki_and_tetrisClass", "20 \320\274\320\270\320\275\321\203\321\202", nullptr));
 
+        graphicsView->setText(QString());
+        graphicsView_2->setText(QString());
+        graphicsView_3->setText(QString());
+        graphicsView_4->setText(QString());
+        graphicsView_5->setText(QString());
+        graphicsView_6->setText(QString());
+        graphicsView_7->setText(QString());
+        graphicsView_8->setText(QString());
+        label_9->setText(QString());
     } // retranslateUi
 
 };
