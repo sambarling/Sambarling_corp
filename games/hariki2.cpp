@@ -4,6 +4,8 @@ hariki2::hariki2(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
+    timer = new QTimer();
+    connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
     connect(ui.pushButton, SIGNAL(clicked()), this, SLOT(start_game_slot()));
     connect(ui.pushButton_2, SIGNAL(clicked()), this, SLOT(record_slot()));
     connect(ui.pushButton_3, SIGNAL(clicked()), this, SLOT(exit_slot()));
@@ -133,6 +135,10 @@ void hariki2::start_game_slot()
     ui_game.graphicsView_7->setGeometry(group_pol_7_qrect);
     ui_game.graphicsView_8->setGeometry(group_pol_8_qrect);
     ui_game.graphicsView_9->setGeometry(group_pol_9_qrect);
+    time_t now = time(0);
+    tm* ltm = localtime(&now);
+    int secs = ltm->tm_sec;
+    srand(secs);
 }
 
 void hariki2::update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t)
@@ -180,26 +186,27 @@ void hariki2::exit_slot()
 
 void hariki2::new_game_slot()
 {
-    //------------------------console game-------------------------------------------------------
-    krug krug11;
-    krug krug12;
-    krug krug13;
-    krug krug21;
-    krug krug22;
-    krug krug23;
-    krug krug31;
-    krug krug32;
-    krug krug33;
-    krug11.rand_color();
-    krug11.init();
-    krug12.init();
-    krug13.init();
-    krug21.init();
-    krug22.init();
-    krug23.init();
-    krug31.init();
-    krug32.init();
-    krug33.init();
-    update(krug11, krug12, krug13, krug21, krug22, krug23, krug31, krug32, krug33);
-    int test;
+   //------------------------console game-------------------------------------------------------
+    int sl = rand();
+    povt = 0;
+   pov = sl % 30;
+    timer->start(500);
+}
+
+void hariki2::slotTimerAlarm()
+{
+    if (pov == povt) timer->stop();
+    else {
+        krug11.init();
+        krug12.init();
+        krug13.init();
+        krug21.init();
+        krug22.init();
+        krug23.init();
+        krug31.init();
+        krug32.init();
+        krug33.init();
+        update(krug11, krug12, krug13, krug21, krug22, krug23, krug31, krug32, krug33);
+        povt = povt + 1;
+    }
 }
