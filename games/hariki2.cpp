@@ -161,22 +161,65 @@ krug hariki2::select_yes(int stav)
     {
     case 0:
         return krug11;
+        break;
     case 1:
         return krug12;
+        break;
     case 2:
         return krug13;
+        break;
     case 3:
         return krug21;
+        break;
     case 4:
         return krug22;
+        break;
     case 5:
         return krug23;
+        break;
     case 6:
         return krug31;
+        break;
     case 7:
         return krug32;
+        break;
     case 8:
         return krug33;
+        break;
+    }
+}
+
+void hariki2::write_yes(int color, int tone, int stav)
+{
+    switch (stav)
+    {
+    case 0:
+        krug11.writes(color, tone);
+        break;
+    case 1:
+        krug12.writes(color, tone);
+        break;
+    case 2:
+        krug13.writes(color, tone);
+        break;
+    case 3:
+        krug21.writes(color, tone);
+        break;
+    case 4:
+        krug22.writes(color, tone);
+        break;
+    case 5:
+        krug23.writes(color, tone);
+        break;
+    case 6:
+        krug31.writes(color, tone);
+        break;
+    case 7:
+        krug32.writes(color, tone);
+        break;
+    case 8:
+        krug33.writes(color, tone);
+        break;
     }
 }
 

@@ -19,7 +19,7 @@ public:
     hariki2(QWidget *parent = Q_NULLPTR);
     void update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t);
     krug select_yes(int stav);
-    void write_yes(int color, int tone);
+    void write_yes(int color, int tone, int stav);
     krug krug11;
     krug krug12;
     krug krug13;
