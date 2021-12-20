@@ -155,6 +155,31 @@ void hariki2::update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, kru
     
 }
 
+krug hariki2::select_yes(int stav)
+{
+    switch (stav)
+    {
+    case 0:
+        return krug11;
+    case 1:
+        return krug12;
+    case 2:
+        return krug13;
+    case 3:
+        return krug21;
+    case 4:
+        return krug22;
+    case 5:
+        return krug23;
+    case 6:
+        return krug31;
+    case 7:
+        return krug32;
+    case 8:
+        return krug33;
+    }
+}
+
 void hariki2::record_slot()
 {
     QDialog* record = new QDialog;
@@ -208,5 +233,16 @@ void hariki2::slotTimerAlarm()
         krug33.init();
         update(krug11, krug12, krug13, krug21, krug22, krug23, krug31, krug32, krug33);
         povt = povt + 1;
+        if (povt == 1) 
+        {
+            int tempy = rand();
+            yesp = tempy % 9;
+            yesp1 = select_yes(yesp).ver_color();
+            yesp2 = select_yes(yesp).ver_tone();
+        }
+        else
+        {
+
+        }
     }
 }

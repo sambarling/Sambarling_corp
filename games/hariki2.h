@@ -18,6 +18,8 @@ class hariki2 : public QMainWindow
 public:
     hariki2(QWidget *parent = Q_NULLPTR);
     void update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t);
+    krug select_yes(int stav);
+    void write_yes(int color, int tone);
     krug krug11;
     krug krug12;
     krug krug13;
@@ -30,6 +32,9 @@ public:
     QTimer* timer;
     int pov = 0;
     int povt = 0;
+    int yesp;
+    int yesp1;
+    int yesp2;
 private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;
