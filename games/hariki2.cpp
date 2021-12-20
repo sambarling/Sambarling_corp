@@ -135,9 +135,18 @@ void hariki2::start_game_slot()
     ui_game.graphicsView_9->setGeometry(group_pol_9_qrect);
 }
 
-
-void hariki2::update()
+void hariki2::update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t)
 {
+    ui_game.graphicsView->setPixmap(a.select_pix(a.ver_color(), a.ver_tone()));
+    ui_game.graphicsView_2->setPixmap(b.select_pix(b.ver_color(), b.ver_tone()));
+    ui_game.graphicsView_3->setPixmap(c.select_pix(c.ver_color(), c.ver_tone()));
+    ui_game.graphicsView_4->setPixmap(d.select_pix(d.ver_color(), d.ver_tone()));
+    ui_game.graphicsView_5->setPixmap(e.select_pix(e.ver_color(), e.ver_tone()));
+    ui_game.graphicsView_6->setPixmap(f.select_pix(f.ver_color(), f.ver_tone()));
+    ui_game.graphicsView_7->setPixmap(g.select_pix(g.ver_color(), g.ver_tone()));
+    ui_game.graphicsView_8->setPixmap(h.select_pix(h.ver_color(), h.ver_tone()));
+    ui_game.graphicsView_9->setPixmap(t.select_pix(t.ver_color(), t.ver_tone()));
+    
 }
 
 void hariki2::record_slot()
@@ -191,4 +200,6 @@ void hariki2::new_game_slot()
     krug31.init();
     krug32.init();
     krug33.init();
+    update(krug11, krug12, krug13, krug21, krug22, krug23, krug31, krug32, krug33);
+    int test;
 }

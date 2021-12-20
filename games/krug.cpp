@@ -186,3 +186,13 @@ void krug::init()
 	ot = rand_tone();
 	writes(cl, ot);
 }
+
+int krug::ver_color()
+{
+	return color;
+}
+
+int krug::ver_tone()
+{
+	return tone;
+}

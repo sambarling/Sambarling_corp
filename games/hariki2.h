@@ -16,7 +16,7 @@ class hariki2 : public QMainWindow
 
 public:
     hariki2(QWidget *parent = Q_NULLPTR);
-    void update();
+    void update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t);
 private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;

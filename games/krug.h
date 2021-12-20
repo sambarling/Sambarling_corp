@@ -17,6 +17,8 @@ public:
 	int rand_tone();
 	void writes(int colors, int tones);
 	void init();
+	int ver_color();
+	int ver_tone();
 private:
 	int color;
 	int tone;
