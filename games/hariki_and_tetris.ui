@@ -223,7 +223,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_9">
+   <widget class="QLabel" name="graphicsView_9">
     <property name="geometry">
      <rect>
       <x>560</x>

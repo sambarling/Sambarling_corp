@@ -36,7 +36,7 @@ public:
     QLabel *graphicsView_6;
     QLabel *graphicsView_7;
     QLabel *graphicsView_8;
-    QLabel *label_9;
+    QLabel *graphicsView_9;
 
     void setupUi(QMainWindow *hariki_and_tetrisClass)
     {
@@ -100,10 +100,10 @@ public:
         graphicsView_8->setObjectName(QString::fromUtf8("graphicsView_8"));
         graphicsView_8->setGeometry(QRect(410, 590, 49, 16));
         graphicsView_8->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
-        label_9 = new QLabel(centralWidget);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(560, 590, 49, 16));
-        label_9->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
+        graphicsView_9 = new QLabel(centralWidget);
+        graphicsView_9->setObjectName(QString::fromUtf8("graphicsView_9"));
+        graphicsView_9->setGeometry(QRect(560, 590, 49, 16));
+        graphicsView_9->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
         hariki_and_tetrisClass->setCentralWidget(centralWidget);
 
         retranslateUi(hariki_and_tetrisClass);
@@ -130,7 +130,7 @@ public:
         graphicsView_6->setText(QString());
         graphicsView_7->setText(QString());
         graphicsView_8->setText(QString());
-        label_9->setText(QString());
+        graphicsView_9->setText(QString());
     } // retranslateUi
 
 };
