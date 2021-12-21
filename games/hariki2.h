@@ -63,6 +63,7 @@ private:
     Ui::record_table ui_record;
     Ui::hariki_and_tetrisClass ui_game;
     Ui::Name_Dio ui_name;
+    Ui::Test ui_
 private slots:
     void start_game_slot();
     void record_slot();

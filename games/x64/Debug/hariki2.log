@@ -1,17 +1,3 @@
-﻿  Reading Qt configuration (C:/Qt/6.2.2/msvc2019_64/bin/qmake)
-  uic hariki2.ui
-  uic hariki_and_tetris.ui
-  rcc hariki2.qrc
-  rcc hariki_and_tetris.qrc
-  moc hariki2.h
-  table_itemtetris.cpp
-  hariki2.cpp
-  krug.cpp
-  main.cpp
-C:\Users\Дмитрий\Documents\GitHub\Sambarling_corp\games\krug.cpp(86): warning C4715: krug::select_pix: значение возвращается не при всех путях выполнения
-C:\Users\Дмитрий\Documents\GitHub\Sambarling_corp\games\krug.cpp(161): warning C4715: krug::select_name_pix: значение возвращается не при всех путях выполнения
-C:\Users\Дмитрий\Documents\GitHub\Sambarling_corp\games\hariki2.cpp(251): warning C4715: hariki2::select_yes: значение возвращается не при всех путях выполнения
-  qrc_hariki2.cpp
-  qrc_hariki_and_tetris.cpp
-  moc_hariki2.cpp
-  hariki2.vcxproj -> C:\Users\Дмитрий\Documents\GitHub\Sambarling_corp\games\x64\Debug\hariki2.exe
+﻿  hariki2.cpp
+E:\личное\учеба\IV курс\I\Зыков\hariki2.cpp(251): warning C4715: hariki2::select_yes: значение возвращается не при всех путях выполнения
+  hariki2.vcxproj -> E:\личное\учеба\IV курс\I\Зыков\x64\Debug\hariki2.exe
