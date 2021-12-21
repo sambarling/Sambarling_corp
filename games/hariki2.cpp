@@ -6,6 +6,8 @@ hariki2::hariki2(QWidget *parent)
     ui.setupUi(this);
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
+    timer2 = new QTimer();
+    connect(timer2, SIGNAL(timeout()), this, SLOT(timer_slot()));
     connect(ui.pushButton, SIGNAL(clicked()), this, SLOT(start_game_slot()));
     connect(ui.pushButton_2, SIGNAL(clicked()), this, SLOT(record_slot()));
     connect(ui.pushButton_3, SIGNAL(clicked()), this, SLOT(exit_slot()));
@@ -678,6 +680,11 @@ void hariki2::slot9()
 void hariki2::score_up(int scores)
 {
     score = score + scores;
+
+}
+
+void hariki2::timer_slot()
+{
 
 }
 
