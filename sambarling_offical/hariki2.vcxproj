@@ -134,6 +134,7 @@
     <ClInclude Include="ui_hariki_and_tetris.h" />
     <ClInclude Include="ui_name_Dio.h" />
     <ClInclude Include="ui_record.h" />
+    <ClInclude Include="ui_test.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="hariki2.rc" />
