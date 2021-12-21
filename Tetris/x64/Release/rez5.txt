@@ -1,0 +1,15 @@
+player
+
+1500
+player100
+
+1200
+player1000
+
+100
+player5
+
+50
+player4
+
+40

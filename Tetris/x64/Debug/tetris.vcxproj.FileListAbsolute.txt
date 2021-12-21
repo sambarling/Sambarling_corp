@@ -1,0 +1,5 @@
+C:\Users\NoBody\Desktop\tetris\x64\Debug\tetris.exe
+C:\Users\NoBody\Desktop\tetris\x64\Debug\tetris.pdb
+C:\Users\newli\source\repos\tetris\x64\Debug\tetris.exe
+C:\Users\newli\source\repos\tetris\x64\Debug\tetris.pdb
+C:\Users\Дмитрий\source\repos\tetris\x64\Debug\tetris.exe

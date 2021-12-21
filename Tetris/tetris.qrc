@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="tetris">
+    <file>x64/Debug/avatar.png</file>
+  </qresource>
+</RCC>
