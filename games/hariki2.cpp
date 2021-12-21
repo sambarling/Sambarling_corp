@@ -5,6 +5,7 @@ hariki2::hariki2(QWidget *parent)
 {
     ui.setupUi(this);
     ui_name.setupUi(names);
+    ui_game.setupUi(game);
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
     timer2 = new QTimer();
@@ -68,7 +69,6 @@ void hariki2::start_game_slot()
 {
     name = ui_name.lineEdit->text();
     names->close();
-    ui_game.setupUi(game);
     game->show();
     connect(ui_game.start_game, SIGNAL(clicked()), this, SLOT(new_game_slot()));
     connect(ui_game.pushButton_1, SIGNAL(clicked()), this, SLOT(slot1()));
@@ -177,6 +177,21 @@ void hariki2::start_game_slot()
     time_s = -10;
     score = 0;
     start_status = false;
+    QPixmap clean;
+    ui_game.graphicsView->setPixmap(clean);
+    ui_game.graphicsView_2->setPixmap(clean);
+    ui_game.graphicsView_3->setPixmap(clean);
+    ui_game.graphicsView_4->setPixmap(clean);
+    ui_game.graphicsView_5->setPixmap(clean);
+    ui_game.graphicsView_6->setPixmap(clean);
+    ui_game.graphicsView_7->setPixmap(clean);
+    ui_game.graphicsView_8->setPixmap(clean);
+    ui_game.graphicsView_9->setPixmap(clean);
+    ui_game.start_game->setEnabled(true);
+    ui_game.time_game->setEnabled(true);
+    ui_game.time_game_2->display(0);
+    ui_game.lineEdit->setText("");
+    ui_game.lcdNumber->display(0);
 }
 
 void hariki2::update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t)
