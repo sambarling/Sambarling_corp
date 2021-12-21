@@ -6,9 +6,12 @@ hariki2::hariki2(QWidget *parent)
     ui.setupUi(this);
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
+    timer2 = new QTimer();
+    connect(timer2, SIGNAL(timeout()), this, SLOT(timer_slot()));
     connect(ui.pushButton, SIGNAL(clicked()), this, SLOT(start_game_slot()));
     connect(ui.pushButton_2, SIGNAL(clicked()), this, SLOT(record_slot()));
     connect(ui.pushButton_3, SIGNAL(clicked()), this, SLOT(exit_slot()));
+    start_status = false;
     this->showFullScreen();
     HDC hdcScreen = GetDC(NULL);
     int dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
@@ -58,7 +61,6 @@ hariki2::hariki2(QWidget *parent)
     del_cn1 = del * 0.8;
     QRect cn3(cn1, cny1, del_cn1, hir_cn);
     ui.pushButton_3->setGeometry(cn3);
-    int testblabla = 100;
 }
 
 void hariki2::start_game_slot()
@@ -110,6 +112,9 @@ void hariki2::start_game_slot()
     int line_y = (cy / 10) + ((cx / 20) * 3) + 21;
     QRect line_slot(lcd_x, line_y, del_lcd, hir_lcd);
     ui_game.lineEdit->setGeometry(line_slot);
+    int timer_game_s1= (cy / 10)*9;
+    QRect timer_game_s11(lcd_x, timer_game_s1, del_lcd, hir_lcd);
+    ui_game.time_game_2->setGeometry(timer_game_s11);
 
     group_pol_del = (del_groupbox / 14) * 4;
     group_pol_hir = (hir_groupbox / 14) * 4;
@@ -162,6 +167,8 @@ void hariki2::start_game_slot()
     tm* ltm = localtime(&now);
     int secs = ltm->tm_sec;
     srand(secs);
+    time_s = 10;
+    score = 0;
 }
 
 void hariki2::update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t)
@@ -277,13 +284,19 @@ void hariki2::exit_slot()
 void hariki2::new_game_slot()
 {
    //------------------------console game-------------------------------------------------------
-    int sl = rand();
-    povt = 0;
+   int sl = rand();
+   povt = 0;
    pov = sl % 30;
    if (pov == 1) pov = 2;
    else;
    open = false;
-    timer->start(1000);
+   timer->start(1000);
+    if (start_status == false) 
+    {
+        timer2->start(1000);
+        start_status = true;
+    }
+    else;
 }
 
 void hariki2::slotTimerAlarm()
@@ -673,6 +686,31 @@ void hariki2::slot9()
         };
     }
     else;
+}
+
+void hariki2::timer_slot()
+{
+    if (time_s == 0)
+    {
+        timer2->stop();
+        timer->stop();
+        ui_game.graphicsView->setPixmap(krug11.select_pix(5, 2));
+        ui_game.graphicsView_2->setPixmap(krug11.select_pix(5, 2));
+        ui_game.graphicsView_3->setPixmap(krug11.select_pix(5, 2));
+        ui_game.graphicsView_4->setPixmap(krug11.select_pix(5, 2));
+        ui_game.graphicsView_5->setPixmap(krug11.select_pix(5, 2));
+        ui_game.graphicsView_6->setPixmap(krug11.select_pix(5, 2));
+        ui_game.graphicsView_7->setPixmap(krug11.select_pix(5, 2));
+        ui_game.graphicsView_8->setPixmap(krug11.select_pix(5, 2));
+        ui_game.graphicsView_9->setPixmap(krug11.select_pix(5, 2));
+        ui_game.start_game->setEnabled(false);
+        open = false;
+    }
+    else
+    {
+        time_s = time_s - 1;
+        ui_game.time_game_2->display(time_s);
+    };
 }
 
 void hariki2::score_up(int scores)

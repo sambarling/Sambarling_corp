@@ -33,6 +33,7 @@ public:
     krug krug32;
     krug krug33;
     QTimer* timer;
+    QTimer* timer2;
     QString rez12;
     int pov = 0;
     int povt = 0;
@@ -42,9 +43,11 @@ public:
     int yesprez;
     int group_pol_del;
     int group_pol_hir;
+    int score;
+    int time_s;
+    bool start_status;
     bool open;
     bool status_pol;
-    int score;
 private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;
@@ -66,5 +69,5 @@ private slots:
     void slot8();
     void slot9();
     void score_up(int scores);
- 
+    void timer_slot();
 };

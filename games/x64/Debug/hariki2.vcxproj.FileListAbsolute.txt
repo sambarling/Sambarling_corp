@@ -1,2 +1,2 @@
 E:\личное\учеба\IV курс\I\Зыков\Версии\x64\Debug\hariki2.exe
-C:\Users\Дмитрий\Documents\vs\github\games\x64\Debug\hariki2.exe
+C:\Users\Дмитрий\Documents\GitHub\Sambarling_corp\games\x64\Debug\hariki2.exe
