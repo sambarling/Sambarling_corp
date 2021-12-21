@@ -50,6 +50,8 @@ public:
     QPushButton *pushButton_8;
     QPushButton *pushButton_9;
     QLCDNumber *lcdNumber;
+    QLCDNumber *time_game_2;
+    QPushButton *pushButton;
 
     void setupUi(QMainWindow *hariki_and_tetrisClass)
     {
@@ -171,6 +173,12 @@ public:
         lcdNumber = new QLCDNumber(centralWidget);
         lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
         lcdNumber->setGeometry(QRect(810, 120, 64, 23));
+        time_game_2 = new QLCDNumber(centralWidget);
+        time_game_2->setObjectName(QString::fromUtf8("time_game_2"));
+        time_game_2->setGeometry(QRect(210, 580, 64, 23));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(770, 210, 75, 24));
         hariki_and_tetrisClass->setCentralWidget(centralWidget);
 
         retranslateUi(hariki_and_tetrisClass);
@@ -207,6 +215,7 @@ public:
         pushButton_7->setText(QString());
         pushButton_8->setText(QString());
         pushButton_9->setText(QString());
+        pushButton->setText(QCoreApplication::translate("hariki_and_tetrisClass", "\320\222\321\213\321\205\320\276\320\264", nullptr));
     } // retranslateUi
 
 };

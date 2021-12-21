@@ -115,6 +115,10 @@ void hariki2::start_game_slot()
     int timer_game_s1= (cy / 10)*9;
     QRect timer_game_s11(lcd_x, timer_game_s1, del_lcd, hir_lcd);
     ui_game.time_game_2->setGeometry(timer_game_s11);
+    int exit_slot_y=  (cy / 10) + ((cx / 20) * 4) + 28;
+    QRect exit_slot (lcd_x, exit_slot_y, del_lcd, hir_lcd);
+    ui_game.pushButton->setGeometry(exit_slot);
+
 
     group_pol_del = (del_groupbox / 14) * 4;
     group_pol_hir = (hir_groupbox / 14) * 4;

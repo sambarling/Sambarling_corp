@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'hariki_and_tetrisshxuRt.ui'
+** Form generated from reading UI file 'hariki_and_tetrisOikfwK.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.2.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef HARIKI_AND_TETRISSHXURT_H
-#define HARIKI_AND_TETRISSHXURT_H
+#ifndef HARIKI_AND_TETRISOIKFWK_H
+#define HARIKI_AND_TETRISOIKFWK_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -51,6 +51,7 @@ public:
     QPushButton *pushButton_9;
     QLCDNumber *lcdNumber;
     QLCDNumber *time_game_2;
+    QPushButton *pushButton;
 
     void setupUi(QMainWindow *hariki_and_tetrisClass)
     {
@@ -175,6 +176,9 @@ public:
         time_game_2 = new QLCDNumber(centralWidget);
         time_game_2->setObjectName(QString::fromUtf8("time_game_2"));
         time_game_2->setGeometry(QRect(210, 580, 64, 23));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(770, 210, 75, 24));
         hariki_and_tetrisClass->setCentralWidget(centralWidget);
 
         retranslateUi(hariki_and_tetrisClass);
@@ -211,6 +215,7 @@ public:
         pushButton_7->setText(QString());
         pushButton_8->setText(QString());
         pushButton_9->setText(QString());
+        pushButton->setText(QCoreApplication::translate("hariki_and_tetrisClass", "\320\222\321\213\321\205\320\276\320\264", nullptr));
     } // retranslateUi
 
 };
@@ -221,4 +226,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // HARIKI_AND_TETRISSHXURT_H
+#endif // HARIKI_AND_TETRISOIKFWK_H
