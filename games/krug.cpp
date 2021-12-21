@@ -72,6 +72,16 @@ QPixmap krug::select_pix(int color, int tone)
 			break;
 		}
 		break;
+	case 5:
+		switch (tone)
+		{
+		case 1:
+			return pic_yes;
+			break;
+		case 2:
+			return pic_no;
+			break;
+		}
 	}
 }
 

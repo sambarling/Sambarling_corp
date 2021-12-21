@@ -11,6 +11,8 @@
 #include "krug.h"
 #include <QTimer>
 #include <QMessageBox>
+#include <string>
+using namespace std;
 
 class hariki2 : public QMainWindow
 {
@@ -38,7 +40,10 @@ public:
     int yesp1;
     int yesp2;
     int yesprez;
+    int group_pol_del;
+    int group_pol_hir;
     bool open;
+    bool status_pol;
 private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;

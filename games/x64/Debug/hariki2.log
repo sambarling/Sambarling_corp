@@ -7,8 +7,8 @@
   hariki2.cpp
   krug.cpp
   main.cpp
-C:\Users\Дмитрий\Desktop\Новая папка\krug.cpp(76): warning C4715: krug::select_pix: значение возвращается не при всех путях выполнения
-C:\Users\Дмитрий\Desktop\Новая папка\krug.cpp(151): warning C4715: krug::select_name_pix: значение возвращается не при всех путях выполнения
+C:\Users\Дмитрий\Desktop\Новая папка\krug.cpp(86): warning C4715: krug::select_pix: значение возвращается не при всех путях выполнения
+C:\Users\Дмитрий\Desktop\Новая папка\krug.cpp(161): warning C4715: krug::select_name_pix: значение возвращается не при всех путях выполнения
 C:\Users\Дмитрий\Desktop\Новая папка\hariki2.cpp(210): warning C4715: hariki2::select_yes: значение возвращается не при всех путях выполнения
   qrc_hariki2.cpp
   qrc_hariki_and_tetris.cpp
