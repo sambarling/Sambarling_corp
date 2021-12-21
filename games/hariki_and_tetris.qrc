@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>da.png</file>
+    <file>net.png</file>
     <file>bg.png</file>
     <file>spy.png</file>
     <file>test.png</file>

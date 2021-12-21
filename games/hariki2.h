@@ -10,6 +10,7 @@
 #include <QFile>
 #include "krug.h"
 #include <QTimer>
+#include <QMessageBox>
 
 class hariki2 : public QMainWindow
 {
@@ -30,12 +31,14 @@ public:
     krug krug32;
     krug krug33;
     QTimer* timer;
+    QString rez12;
     int pov = 0;
     int povt = 0;
     int yesp;
     int yesp1;
     int yesp2;
     int yesprez;
+    bool open;
 private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;
@@ -47,4 +50,13 @@ private slots:
     void exit_slot();
     void new_game_slot();
     void slotTimerAlarm();
+    void slot1();
+    void slot2();
+    void slot3();
+    void slot4();
+    void slot5();
+    void slot6();
+    void slot7();
+    void slot8();
+    void slot9();
 };
