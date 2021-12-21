@@ -1,5 +1,11 @@
 {
   "Version": 1,
-  "ProjectMap": {},
-  "NextColorIndex": 0
+  "ProjectMap": {
+    "7a43e3bf-8cf5-4882-8b4e-d63a1be7c029": {
+      "ProjectGuid": "7a43e3bf-8cf5-4882-8b4e-d63a1be7c029",
+      "DisplayName": "hariki2",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
 }

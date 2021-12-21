@@ -165,10 +165,9 @@ int krug::rand_color()
 		time_t now = time(0);
 		tm* ltm = localtime(&now);
 		int secs=ltm->tm_sec;
-		srand(secs);
 		int sl = rand();
 		sl = sl % 4;
-		if (sl == 0) sl = 1;
+		if (sl == 0) sl = 4;
 		else;
 		return sl;
 }
@@ -177,7 +176,7 @@ int krug::rand_tone()
 {
 	int sl = rand();
 	sl = sl % 4;
-	if (sl == 0) sl = 1;
+	if (sl == 0) sl = 4;
 	else;
 	return sl;
 }

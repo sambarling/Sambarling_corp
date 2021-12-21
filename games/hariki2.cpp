@@ -319,7 +319,7 @@ void hariki2::new_game_slot()
    //------------------------console game-------------------------------------------------------
    int sl = rand();
    povt = 0;
-   pov = sl % 30;
+   pov = sl % 24;
    QString test15(ui_game.time_game->currentText().toLocal8Bit());
    if (time_s == -10)
    {
