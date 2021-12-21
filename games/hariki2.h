@@ -35,6 +35,7 @@ public:
     int yesp;
     int yesp1;
     int yesp2;
+    int yesprez;
 private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;

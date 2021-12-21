@@ -274,7 +274,8 @@ void hariki2::slotTimerAlarm()
         krug31.init();
         krug32.init();
         krug33.init();
-        update(krug11, krug12, krug13, krug21, krug22, krug23, krug31, krug32, krug33);
+        if (povt == 1) Sleep(10000);
+        else;
         povt = povt + 1;
         if (povt == 1) 
         {
@@ -285,7 +286,11 @@ void hariki2::slotTimerAlarm()
         }
         else
         {
-
+            int tempy = rand();
+            yesprez = tempy % 9;
+            write_yes(yesp1, yesp2, yesprez);
+            yesp = yesprez;
         }
+        update(krug11, krug12, krug13, krug21, krug22, krug23, krug31, krug32, krug33);
     }
 }
