@@ -53,6 +53,8 @@ public:
     int group_pol_hir;
     int score;
     int time_s;
+    int hour;
+    int min;
     bool start_status;
     bool open;
     bool status_pol;

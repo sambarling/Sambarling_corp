@@ -13,10 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -31,9 +28,6 @@ public:
     QPushButton *pushButton;
     QGroupBox *groupBox_2;
     QGroupBox *groupBox_3;
-    QMenuBar *menuBar;
-    QToolBar *mainToolBar;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *hariki2Class)
     {
@@ -51,6 +45,11 @@ public:
         groupBox = new QGroupBox(centralWidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setGeometry(QRect(670, 390, 120, 80));
+        QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
+        groupBox->setSizePolicy(sizePolicy);
         groupBox->setStyleSheet(QString::fromUtf8("border-image: url(:/hariki2/tree-3358468.png);"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
@@ -70,16 +69,6 @@ public:
         pushButton->raise();
         pushButton_3->raise();
         pushButton_2->raise();
-        menuBar = new QMenuBar(hariki2Class);
-        menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 898, 22));
-        hariki2Class->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(hariki2Class);
-        mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
-        hariki2Class->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(hariki2Class);
-        statusBar->setObjectName(QString::fromUtf8("statusBar"));
-        hariki2Class->setStatusBar(statusBar);
 
         retranslateUi(hariki2Class);
 

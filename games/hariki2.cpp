@@ -63,6 +63,15 @@ hariki2::hariki2(QWidget *parent)
     del_cn1 = del * 0.8;
     QRect cn3(cn1, cny1, del_cn1, hir_cn);
     ui.pushButton_3->setGeometry(cn3);
+    time_t now = time(0);
+    tm* ltm = localtime(&now);
+    hour = ltm->tm_hour;
+    if ((hour == 22) || (hour == 23))
+    {
+        hour = 0;
+    }
+    else;
+    min = ltm->tm_min;
 }
 
 void hariki2::start_game_slot()
@@ -831,6 +840,14 @@ void hariki2::timer_slot()
         writeStream << mas[1].get_name() << Qt::endl;
         writeStream << mas[1].get_rez() << Qt::endl;
         file.close();
+        QFile file3(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/time_z.txt");
+        file3.open(QIODevice::WriteOnly);
+        QTextStream writeStream2(&file3);
+        QString hour1=QString::number(hour);
+        QString min1= QString::number(min);
+        writeStream2 << hour1 << Qt::endl;
+        writeStream2 << min1 << Qt::endl;
+        file3.close();
         if (score > 2500) 
         {
             QString buffer=(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "\\Sambarling\\Tetris\\tetris.exe");
@@ -860,8 +877,26 @@ void hariki2::push_exit2()
 
 void hariki2::name_but()
 {
-    names->show();
-    connect(ui_name.pushButton, SIGNAL(clicked()), this, SLOT(start_game_slot()));
+    int hour_z;
+    int min_z;
+    QFile file2(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/time_z.txt");
+    file2.open(QIODevice::ReadOnly);
+    hour_z = file2.readLine().toInt();
+    min_z = file2.readLine().toInt();
+    file2.close();
+    if ((hour == (hour_z + 2)) || (hour > (hour_z + 2)))
+    {
+        names->show();
+        connect(ui_name.pushButton, SIGNAL(clicked()), this, SLOT(start_game_slot()));
+    }
+    else
+    {
+        QMessageBox msgBox;  
+        msgBox.setText(QString::fromLocal8Bit("Подождите пожалуйста.\n Вы недавно играли"));
+        msgBox.setIcon(QMessageBox::Information);
+        msgBox.setDefaultButton(QMessageBox::Ok);
+        msgBox.exec();
+    };
 }
 
 

@@ -129,10 +129,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="krug.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="table_itemtetris.h" />
     <ClInclude Include="ui_hariki_and_tetris.h" />
     <ClInclude Include="ui_name_Dio.h" />
     <ClInclude Include="ui_record.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="hariki2.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\Дмитрий\Desktop\eyes_icon_155422.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

@@ -1,15 +1,15 @@
-Player
+Dmitriq
 
-800
+400
+NoBody
 
+150
+Sambarling
 
 140
-50
+Dmitriq
 
-0
-Lord
+100
+Nifedow
 
-0
-150
-
-0
+100
