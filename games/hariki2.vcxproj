@@ -117,6 +117,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="table_itemtetris.cpp" />
     <QtRcc Include="hariki2.qrc" />
     <QtRcc Include="hariki_and_tetris.qrc" />
     <QtUic Include="hariki2.ui" />
@@ -128,7 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="krug.h" />
+    <ClInclude Include="table_itemtetris.h" />
     <ClInclude Include="ui_hariki_and_tetris.h" />
+    <ClInclude Include="ui_name_Dio.h" />
     <ClInclude Include="ui_record.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

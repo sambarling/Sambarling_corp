@@ -46,6 +46,9 @@
     <ClCompile Include="krug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="table_itemtetris.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui_hariki_and_tetris.h">
@@ -55,6 +58,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="krug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="table_itemtetris.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_name_Dio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

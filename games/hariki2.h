@@ -12,6 +12,8 @@
 #include <QTimer>
 #include <QMessageBox>
 #include <string>
+#include "table_itemtetris.h"
+#include "ui_name_Dio.h"
 using namespace std;
 
 class hariki2 : public QMainWindow
@@ -20,6 +22,8 @@ class hariki2 : public QMainWindow
 
 public:
     hariki2(QWidget *parent = Q_NULLPTR);
+    QMainWindow* game = new QMainWindow;
+    QDialog* names = new QDialog;
     void update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t);
     krug select_yes(int stav);
     void write_yes(int color, int tone, int stav);
@@ -35,6 +39,7 @@ public:
     QTimer* timer;
     QTimer* timer2;
     QString rez12;
+    QString name;
     int pov = 0;
     int povt = 0;
     int yesp;
@@ -52,7 +57,7 @@ private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;
     Ui::hariki_and_tetrisClass ui_game;
-
+    Ui::Name_Dio ui_name;
 private slots:
     void start_game_slot();
     void record_slot();
@@ -70,4 +75,6 @@ private slots:
     void slot9();
     void score_up(int scores);
     void timer_slot();
+    void push_exit2();
+    void name_but();
 };

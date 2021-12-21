@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'recordqZHosw.ui'
+** Form generated from reading UI file 'recordeuyRTX.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.1
+** Created by: Qt User Interface Compiler version 6.2.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef RECORDQZHOSW_H
-#define RECORDQZHOSW_H
+#ifndef RECORDEUYRTX_H
+#define RECORDEUYRTX_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -26,9 +26,9 @@ public:
     {
         if (record_table->objectName().isEmpty())
             record_table->setObjectName(QString::fromUtf8("record_table"));
-        record_table->resize(340, 260);
-        record_table->setMinimumSize(QSize(340, 260));
-        record_table->setMaximumSize(QSize(340, 260));
+        record_table->resize(340, 200);
+        record_table->setMinimumSize(QSize(340, 200));
+        record_table->setMaximumSize(QSize(340, 200));
         record = new QTableWidget(record_table);
         if (record->columnCount() < 2)
             record->setColumnCount(2);
@@ -36,8 +36,8 @@ public:
         record->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         record->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        if (record->rowCount() < 7)
-            record->setRowCount(7);
+        if (record->rowCount() < 5)
+            record->setRowCount(5);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         record->setVerticalHeaderItem(0, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
@@ -48,19 +48,15 @@ public:
         record->setVerticalHeaderItem(3, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
         record->setVerticalHeaderItem(4, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        record->setVerticalHeaderItem(5, __qtablewidgetitem7);
-        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        record->setVerticalHeaderItem(6, __qtablewidgetitem8);
         record->setObjectName(QString::fromUtf8("record"));
-        record->setGeometry(QRect(9, 9, 321, 241));
+        record->setGeometry(QRect(9, 9, 321, 181));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(record->sizePolicy().hasHeightForWidth());
         record->setSizePolicy(sizePolicy);
-        record->setMinimumSize(QSize(321, 241));
-        record->setMaximumSize(QSize(321, 241));
+        record->setMinimumSize(QSize(321, 181));
+        record->setMaximumSize(QSize(321, 181));
         record->horizontalHeader()->setVisible(true);
         record->horizontalHeader()->setCascadingSectionResizes(false);
         record->horizontalHeader()->setDefaultSectionSize(150);
@@ -93,10 +89,6 @@ public:
         ___qtablewidgetitem5->setText(QCoreApplication::translate("record_table", "4", nullptr));
         QTableWidgetItem *___qtablewidgetitem6 = record->verticalHeaderItem(4);
         ___qtablewidgetitem6->setText(QCoreApplication::translate("record_table", "5", nullptr));
-        QTableWidgetItem *___qtablewidgetitem7 = record->verticalHeaderItem(5);
-        ___qtablewidgetitem7->setText(QCoreApplication::translate("record_table", "6", nullptr));
-        QTableWidgetItem *___qtablewidgetitem8 = record->verticalHeaderItem(6);
-        ___qtablewidgetitem8->setText(QCoreApplication::translate("record_table", "7", nullptr));
     } // retranslateUi
 
 };
@@ -107,4 +99,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // RECORDQZHOSW_H
+#endif // RECORDEUYRTX_H

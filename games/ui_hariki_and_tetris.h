@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'hariki_and_tetrisOikfwK.ui'
+** Form generated from reading UI file 'hariki_and_tetriscVKiRm.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.2.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef HARIKI_AND_TETRISOIKFWK_H
-#define HARIKI_AND_TETRISOIKFWK_H
+#ifndef HARIKI_AND_TETRISCVKIRM_H
+#define HARIKI_AND_TETRISCVKIRM_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -83,6 +83,7 @@ public:
         time_game->addItem(QString());
         time_game->setObjectName(QString::fromUtf8("time_game"));
         time_game->setGeometry(QRect(400, 170, 71, 22));
+        time_game->setCurrentText(QString::fromUtf8("2 \320\274\320\270\320\275\321\203\321\202\321\213 (120 \321\201\320\265\320\272\321\203\320\275\320\264)"));
         graphicsView = new QLabel(centralWidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setGeometry(QRect(210, 490, 49, 16));
@@ -192,10 +193,10 @@ public:
         groupBox->setTitle(QString());
         groupBox_2->setTitle(QString());
         start_game->setText(QCoreApplication::translate("hariki_and_tetrisClass", "\320\235\320\260\321\207\320\260\321\202\321\214 \320\270\320\263\321\200\321\203", nullptr));
-        time_game->setItemText(0, QCoreApplication::translate("hariki_and_tetrisClass", "5 \320\274\320\270\320\275\321\203\321\202", nullptr));
-        time_game->setItemText(1, QCoreApplication::translate("hariki_and_tetrisClass", "10 \320\274\320\270\320\275\321\203\321\202", nullptr));
-        time_game->setItemText(2, QCoreApplication::translate("hariki_and_tetrisClass", "15 \320\274\320\270\320\275\321\203\321\202", nullptr));
-        time_game->setItemText(3, QCoreApplication::translate("hariki_and_tetrisClass", "20 \320\274\320\270\320\275\321\203\321\202", nullptr));
+        time_game->setItemText(0, QCoreApplication::translate("hariki_and_tetrisClass", "2 \320\274\320\270\320\275\321\203\321\202\321\213 (120 \321\201\320\265\320\272\321\203\320\275\320\264)", nullptr));
+        time_game->setItemText(1, QCoreApplication::translate("hariki_and_tetrisClass", "3 \320\274\320\270\320\275\321\203\321\202\321\213 (180 \321\201\320\265\320\272\321\203\320\275\320\264)", nullptr));
+        time_game->setItemText(2, QCoreApplication::translate("hariki_and_tetrisClass", "5 \320\274\320\270\320\275\321\203\321\202 (300 \321\201\320\265\320\272\321\203\320\275\320\264)", nullptr));
+        time_game->setItemText(3, QCoreApplication::translate("hariki_and_tetrisClass", "10 \320\274\320\270\320\275\321\203\321\202 (600 \321\201\320\265\320\272\321\203\320\275\320\264)", nullptr));
 
         graphicsView->setText(QString());
         graphicsView_2->setText(QString());
@@ -226,4 +227,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // HARIKI_AND_TETRISOIKFWK_H
+#endif // HARIKI_AND_TETRISCVKIRM_H

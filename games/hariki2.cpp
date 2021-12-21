@@ -4,11 +4,12 @@ hariki2::hariki2(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
+    ui_name.setupUi(names);
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
     timer2 = new QTimer();
     connect(timer2, SIGNAL(timeout()), this, SLOT(timer_slot()));
-    connect(ui.pushButton, SIGNAL(clicked()), this, SLOT(start_game_slot()));
+    connect(ui.pushButton, SIGNAL(clicked()), this, SLOT(name_but()));
     connect(ui.pushButton_2, SIGNAL(clicked()), this, SLOT(record_slot()));
     connect(ui.pushButton_3, SIGNAL(clicked()), this, SLOT(exit_slot()));
     start_status = false;
@@ -65,7 +66,8 @@ hariki2::hariki2(QWidget *parent)
 
 void hariki2::start_game_slot()
 {
-    QMainWindow* game = new QMainWindow;
+    name = ui_name.lineEdit->text();
+    names->close();
     ui_game.setupUi(game);
     game->show();
     connect(ui_game.start_game, SIGNAL(clicked()), this, SLOT(new_game_slot()));
@@ -78,6 +80,7 @@ void hariki2::start_game_slot()
     connect(ui_game.pushButton_7, SIGNAL(clicked()), this, SLOT(slot7()));
     connect(ui_game.pushButton_8, SIGNAL(clicked()), this, SLOT(slot8()));
     connect(ui_game.pushButton_9, SIGNAL(clicked()), this, SLOT(slot9()));
+    connect(ui_game.pushButton, SIGNAL(clicked()), this, SLOT(push_exit2()));
     game->showFullScreen();
     HDC hdcScreen = GetDC(NULL);
     int dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
@@ -171,8 +174,9 @@ void hariki2::start_game_slot()
     tm* ltm = localtime(&now);
     int secs = ltm->tm_sec;
     srand(secs);
-    time_s = 10;
+    time_s = -10;
     score = 0;
+    start_status = false;
 }
 
 void hariki2::update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t)
@@ -264,19 +268,20 @@ void hariki2::record_slot()
     QFile file(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/rez.txt");
     file.open(QIODevice::ReadOnly);
     ui_record.record->setItem(0, 0, new QTableWidgetItem(QString(file.readLine())));
+    new QTableWidgetItem(QString(file.readLine()));
     ui_record.record->setItem(0, 1, new QTableWidgetItem(QString(file.readLine())));
     ui_record.record->setItem(1, 0, new QTableWidgetItem(QString(file.readLine())));
+    new QTableWidgetItem(QString(file.readLine()));
     ui_record.record->setItem(1, 1, new QTableWidgetItem(QString(file.readLine())));
     ui_record.record->setItem(2, 0, new QTableWidgetItem(QString(file.readLine())));
+    new QTableWidgetItem(QString(file.readLine()));
     ui_record.record->setItem(2, 1, new QTableWidgetItem(QString(file.readLine())));
     ui_record.record->setItem(3, 0, new QTableWidgetItem(QString(file.readLine())));
+    new QTableWidgetItem(QString(file.readLine()));
     ui_record.record->setItem(3, 1, new QTableWidgetItem(QString(file.readLine())));
     ui_record.record->setItem(4, 0, new QTableWidgetItem(QString(file.readLine())));
+    new QTableWidgetItem(QString(file.readLine()));
     ui_record.record->setItem(4, 1, new QTableWidgetItem(QString(file.readLine())));
-    ui_record.record->setItem(5, 0, new QTableWidgetItem(QString(file.readLine())));
-    ui_record.record->setItem(5, 1, new QTableWidgetItem(QString(file.readLine())));
-    ui_record.record->setItem(6, 0, new QTableWidgetItem(QString(file.readLine())));
-    ui_record.record->setItem(6, 1, new QTableWidgetItem(QString(file.readLine())));
     file.close();
 }
 
@@ -291,6 +296,42 @@ void hariki2::new_game_slot()
    int sl = rand();
    povt = 0;
    pov = sl % 30;
+   QString test15(ui_game.time_game->currentText().toLocal8Bit());
+   if (time_s == -10)
+   {
+       QString time1("2 минуты (120 секунд)");
+       if (test15 == time1)
+       {
+           time_s = 120;
+       }
+       else
+       {
+           QString time2("3 минуты (180 секунд)");
+           if (time2 == test15)
+           {
+               time_s = 180;
+           }
+           else
+           {
+               QString time3("5 минут (300 секунд)");
+               if (time3 == test15)
+               {
+                   time_s = 300;
+               }
+               else
+               {
+                   QString time4("10 минут (600 секунд)");
+                   if (time4 == test15)
+                   {
+                       time_s = 600;
+                   }
+                   else;
+               };
+           };
+       };
+   }
+   else;
+   ui_game.time_game->setEnabled(false);
    if (pov == 1) pov = 2;
    else;
    open = false;
@@ -709,6 +750,67 @@ void hariki2::timer_slot()
         ui_game.graphicsView_9->setPixmap(krug11.select_pix(5, 2));
         ui_game.start_game->setEnabled(false);
         open = false;
+        table_itemtetris mas[6];
+        QFile file(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/rez.txt");
+        file.open(QIODevice::ReadOnly);
+        QTableWidgetItem* item1 = new QTableWidgetItem(QString(file.readLine()));
+        QTableWidgetItem* item2 = new QTableWidgetItem(QString(file.readLine()));
+        QTableWidgetItem* item3 = new QTableWidgetItem(QString(file.readLine()));
+        QTableWidgetItem* item4 = new QTableWidgetItem(QString(file.readLine()));
+        QTableWidgetItem* item5 = new QTableWidgetItem(QString(file.readLine()));
+        QTableWidgetItem* item6 = new QTableWidgetItem(QString(file.readLine()));
+        QTableWidgetItem* item7 = new QTableWidgetItem(QString(file.readLine()));
+        QTableWidgetItem* item8 = new QTableWidgetItem(QString(file.readLine()));
+        QTableWidgetItem* item9 = new QTableWidgetItem(QString(file.readLine()));
+        QTableWidgetItem* item10 = new QTableWidgetItem(QString(file.readLine()));
+        file.close();
+        QString names;
+        QString fiks("\n");
+        names = name;
+        names = names + fiks;
+        int scores2;
+        scores2 = score;
+        mas[0].set_name(item1->text());
+        mas[0].set_rez(item2->text().toInt());
+        mas[1].set_name(item3->text());
+        mas[1].set_rez(item4->text().toInt());
+        mas[2].set_name(item5->text());
+        mas[2].set_rez(item6->text().toInt());
+        mas[3].set_name(item7->text());
+        mas[3].set_rez(item8->text().toInt());
+        mas[4].set_name(item9->text());
+        mas[4].set_rez(item10->text().toInt());
+        mas[5].set_name(names);
+        mas[5].set_rez(scores2);
+        int x;
+        int y;
+        table_itemtetris temp;
+        for (x = 0; x < 5; x++)
+        {
+            for (y = 0; y < 5 - x; y++)
+            {
+                if (mas[y].get_rez() > mas[y + 1].get_rez())
+                {
+                    temp = mas[y];
+                    mas[y] = mas[y + 1];
+                    mas[y + 1] = temp;
+                }
+                else;
+            }
+        }
+        file.open(QIODevice::WriteOnly);
+        QTextStream writeStream(&file);
+        writeStream << mas[5].get_name() << Qt::endl;
+        writeStream << mas[5].get_rez() << Qt::endl;
+        writeStream << mas[4].get_name() << Qt::endl;
+        writeStream << mas[4].get_rez() << Qt::endl;
+        writeStream << mas[3].get_name() << Qt::endl;
+        writeStream << mas[3].get_rez() << Qt::endl;
+        writeStream << mas[2].get_name() << Qt::endl;
+        writeStream << mas[2].get_rez() << Qt::endl;
+        writeStream << mas[1].get_name() << Qt::endl;
+        writeStream << mas[1].get_rez() << Qt::endl;
+        file.close();
     }
     else
     {
@@ -716,6 +818,20 @@ void hariki2::timer_slot()
         ui_game.time_game_2->display(time_s);
     };
 }
+
+void hariki2::push_exit2()
+{
+    timer2->stop();
+    timer->stop();
+    game->close();
+}
+
+void hariki2::name_but()
+{
+    names->show();
+    connect(ui_name.pushButton, SIGNAL(clicked()), this, SLOT(start_game_slot()));
+}
+
 
 void hariki2::score_up(int scores)
 {
