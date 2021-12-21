@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\games",
+    "\\sambarling_offical"
   ],
-  "SelectedNode": "\\hariki2.sln",
+  "SelectedNode": "\\games\\hariki2.cpp",
   "PreviewInSolutionExplorer": false
 }
