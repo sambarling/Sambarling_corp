@@ -44,6 +44,7 @@ public:
     int group_pol_hir;
     bool open;
     bool status_pol;
+    int score;
 private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;
@@ -64,4 +65,6 @@ private slots:
     void slot7();
     void slot8();
     void slot9();
+    void score_up(int scores);
+ 
 };

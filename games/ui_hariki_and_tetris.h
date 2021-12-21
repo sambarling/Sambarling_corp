@@ -1,18 +1,19 @@
 /********************************************************************************
-** Form generated from reading UI file 'hariki_and_tetrisQJbClI.ui'
+** Form generated from reading UI file 'hariki_and_tetrisuHadRE.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.2.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef HARIKI_AND_TETRISQJBCLI_H
-#define HARIKI_AND_TETRISQJBCLI_H
+#ifndef HARIKI_AND_TETRISUHADRE_H
+#define HARIKI_AND_TETRISUHADRE_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -48,6 +49,7 @@ public:
     QPushButton *pushButton_7;
     QPushButton *pushButton_8;
     QPushButton *pushButton_9;
+    QLCDNumber *lcdNumber;
 
     void setupUi(QMainWindow *hariki_and_tetrisClass)
     {
@@ -128,7 +130,7 @@ public:
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setGeometry(QRect(90, 70, 113, 21));
         QFont font;
-        font.setPointSize(5);
+        font.setPointSize(9);
         lineEdit->setFont(font);
         pushButton_1 = new QPushButton(centralWidget);
         pushButton_1->setObjectName(QString::fromUtf8("pushButton_1"));
@@ -166,6 +168,9 @@ public:
         pushButton_9->setObjectName(QString::fromUtf8("pushButton_9"));
         pushButton_9->setGeometry(QRect(280, 100, 75, 24));
         pushButton_9->setStyleSheet(QString::fromUtf8("border-image: url(:/newPrefix/bg.png);"));
+        lcdNumber = new QLCDNumber(centralWidget);
+        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
+        lcdNumber->setGeometry(QRect(810, 120, 64, 23));
         hariki_and_tetrisClass->setCentralWidget(centralWidget);
 
         retranslateUi(hariki_and_tetrisClass);
@@ -212,4 +217,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // HARIKI_AND_TETRISQJBCLI_H
+#endif // HARIKI_AND_TETRISUHADRE_H

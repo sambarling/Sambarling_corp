@@ -277,7 +277,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>5</pointsize>
+      <pointsize>9</pointsize>
      </font>
     </property>
    </widget>
@@ -423,6 +423,16 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>120</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
     </property>
    </widget>
   </widget>
