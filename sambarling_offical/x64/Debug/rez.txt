@@ -1,0 +1,15 @@
+Player
+
+600
+Dmitriq
+
+400
+Player
+
+200
+NoBody
+
+150
+Sambarling
+
+140
