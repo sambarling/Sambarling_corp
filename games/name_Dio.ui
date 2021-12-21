@@ -34,7 +34,14 @@
     </widget>
    </item>
    <item row="0" column="0" colspan="3">
-    <widget class="QLineEdit" name="lineEdit"/>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="text">
+      <string>Player</string>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

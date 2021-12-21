@@ -11,9 +11,12 @@
 #include "krug.h"
 #include <QTimer>
 #include <QMessageBox>
-#include <string>
 #include "table_itemtetris.h"
 #include "ui_name_Dio.h"
+#include <stdio.h> 
+#include <direct.h>
+#include <sstream>
+#include <string>
 using namespace std;
 
 class hariki2 : public QMainWindow

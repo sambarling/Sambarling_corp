@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'name_DiokSQdsl.ui'
+** Form generated from reading UI file 'name_DiowbaqHQ.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.2
+** Created by: Qt User Interface Compiler version 5.15.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef NAME_DIOKSQDSL_H
-#define NAME_DIOKSQDSL_H
+#ifndef NAME_DIOWBAQHQ_H
+#define NAME_DIOWBAQHQ_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -54,6 +54,8 @@ public:
     {
         Name_Dio->setWindowTitle(QCoreApplication::translate("Name_Dio", "Your name", nullptr));
         pushButton->setText(QCoreApplication::translate("Name_Dio", "\320\245\320\276\321\200\320\276\321\210\320\276", nullptr));
+        lineEdit->setText(QCoreApplication::translate("Name_Dio", "Player", nullptr));
+        lineEdit->setPlaceholderText(QString());
     } // retranslateUi
 
 };
@@ -64,4 +66,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // NAME_DIOKSQDSL_H
+#endif // NAME_DIOWBAQHQ_H

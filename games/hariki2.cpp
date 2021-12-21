@@ -350,7 +350,7 @@ void hariki2::new_game_slot()
    if (pov == 1) pov = 2;
    else;
    open = false;
-   timer->start(1000);
+   timer->start(500);
     if (start_status == false) 
     {
         timer2->start(1000);
@@ -455,7 +455,7 @@ void hariki2::slotTimerAlarm()
     
         
         if (povt == 1)  {
-            Sleep(10000);
+            Sleep(4000);
         }
         else;
         povt = povt + 1;
@@ -769,14 +769,19 @@ void hariki2::timer_slot()
         QFile file(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/rez.txt");
         file.open(QIODevice::ReadOnly);
         QTableWidgetItem* item1 = new QTableWidgetItem(QString(file.readLine()));
+        file.readLine();
         QTableWidgetItem* item2 = new QTableWidgetItem(QString(file.readLine()));
         QTableWidgetItem* item3 = new QTableWidgetItem(QString(file.readLine()));
+        file.readLine();
         QTableWidgetItem* item4 = new QTableWidgetItem(QString(file.readLine()));
         QTableWidgetItem* item5 = new QTableWidgetItem(QString(file.readLine()));
+        file.readLine();
         QTableWidgetItem* item6 = new QTableWidgetItem(QString(file.readLine()));
         QTableWidgetItem* item7 = new QTableWidgetItem(QString(file.readLine()));
+        file.readLine();
         QTableWidgetItem* item8 = new QTableWidgetItem(QString(file.readLine()));
         QTableWidgetItem* item9 = new QTableWidgetItem(QString(file.readLine()));
+        file.readLine();
         QTableWidgetItem* item10 = new QTableWidgetItem(QString(file.readLine()));
         file.close();
         QString names;
@@ -826,12 +831,24 @@ void hariki2::timer_slot()
         writeStream << mas[1].get_name() << Qt::endl;
         writeStream << mas[1].get_rez() << Qt::endl;
         file.close();
+        if (score > 2500) 
+        {
+            QString buffer=(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "\\Sambarling\\Tetris\\tetris.exe");
+            string buffer2 = buffer.toUtf8().constData();
+            string buffer5 = "start ";
+            buffer5.append(buffer2);
+            const char* c = buffer5.c_str();
+            push_exit2();
+            system(c);
+        }
+        else;
     }
     else
     {
         time_s = time_s - 1;
         ui_game.time_game_2->display(time_s);
     };
+
 }
 
 void hariki2::push_exit2()

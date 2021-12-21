@@ -1,15 +1,15 @@
-Dmitriq
+Player
 
-600
-NoBody
+800
 
-150
-Sambarling
 
 140
+50
+
+0
 Lord
 
-50
-Nomibius
+0
+150
 
-45
+0
