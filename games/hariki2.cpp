@@ -67,6 +67,15 @@ void hariki2::start_game_slot()
     ui_game.setupUi(game);
     game->show();
     connect(ui_game.start_game, SIGNAL(clicked()), this, SLOT(new_game_slot()));
+    connect(ui_game.pushButton_1, SIGNAL(clicked()), this, SLOT(slot1()));
+    connect(ui_game.pushButton_2, SIGNAL(clicked()), this, SLOT(slot2()));
+    connect(ui_game.pushButton_3, SIGNAL(clicked()), this, SLOT(slot3()));
+    connect(ui_game.pushButton_4, SIGNAL(clicked()), this, SLOT(slot4()));
+    connect(ui_game.pushButton_5, SIGNAL(clicked()), this, SLOT(slot5()));
+    connect(ui_game.pushButton_6, SIGNAL(clicked()), this, SLOT(slot6()));
+    connect(ui_game.pushButton_7, SIGNAL(clicked()), this, SLOT(slot7()));
+    connect(ui_game.pushButton_8, SIGNAL(clicked()), this, SLOT(slot8()));
+    connect(ui_game.pushButton_9, SIGNAL(clicked()), this, SLOT(slot9()));
     game->showFullScreen();
     HDC hdcScreen = GetDC(NULL);
     int dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
@@ -85,20 +94,25 @@ void hariki2::start_game_slot()
     int start_game_y=cy_groupbox;
     QRect groupbox_qrect(cx_groupbox, cy_groupbox, del_groupbox, hir_groupbox);
     ui_game.groupBox_2->setGeometry(groupbox_qrect);
-    int cx_start_game = cx - ((cx / 20) * 3);
-    int cy_start_game = cy / 10;
-    int del_start_game = ((cx / 20) * 2);
-    int hir_start_game = cx / 20;
-    QRect start_game_qrect(cx_start_game, cy_start_game, del_start_game, hir_start_game);
+    // неверная версия
+    int lcd_x = cx - ((cx / 20) * 3);
+    int lcd_y = cy / 10;
+    int del_lcd = ((cx / 20 - 5) * 3);
+    int hir_lcd = cx / 20;
+    QRect lcd_slot(lcd_x, lcd_y, del_lcd, hir_lcd);
+    ui_game.lcdNumber->setGeometry(lcd_slot);
+    int cy_start_game = (cy / 10) + (cx / 20) + 7;
+    QRect start_game_qrect(lcd_x, cy_start_game, del_lcd, hir_lcd);
     ui_game.start_game->setGeometry(start_game_qrect);
-    int cx_time = (cx - ((cx / 20) * 3)) + 1;
-    int cy_time = (cy / 10) + (cx / 20) + 7;
-    int del_time = ((cx / 20) * 2) - 2;
-    int hir_time = cx / 20;
-    QRect time_qrect(cx_time, cy_time, del_time, hir_time);
+    int cy_time = (cy / 10) + ((cx / 20) * 2) + 14;
+    QRect time_qrect(lcd_x, cy_time, del_lcd, hir_lcd);
     ui_game.time_game->setGeometry(time_qrect);
-    int group_pol_del = (del_groupbox / 14) * 4;
-    int group_pol_hir = (hir_groupbox / 14) * 4;
+    int line_y = (cy / 10) + ((cx / 20) * 3) + 21;
+    QRect line_slot(lcd_x, line_y, del_lcd, hir_lcd);
+    ui_game.lineEdit->setGeometry(line_slot);
+
+    group_pol_del = (del_groupbox / 14) * 4;
+    group_pol_hir = (hir_groupbox / 14) * 4;
     int group_pol_1_cx =start_game_x+(del_groupbox/14);
     int group_pol_1_cy =start_game_y+(hir_groupbox/14);
     int group_pol_2_cx=start_game_x+(del_groupbox/14) +((del_groupbox/14)*4);
@@ -127,14 +141,23 @@ void hariki2::start_game_slot()
     QRect group_pol_8_qrect(group_pol_8_cx, group_pol_8_cy, group_pol_del, group_pol_hir);
     QRect group_pol_9_qrect(group_pol_9_cx, group_pol_9_cy, group_pol_del, group_pol_hir);
     ui_game.graphicsView->setGeometry(group_pol_1_qrect);
+    ui_game.pushButton_1->setGeometry(group_pol_1_qrect);
     ui_game.graphicsView_2->setGeometry(group_pol_2_qrect);
+    ui_game.pushButton_2->setGeometry(group_pol_2_qrect);
     ui_game.graphicsView_3->setGeometry(group_pol_3_qrect);
+    ui_game.pushButton_3->setGeometry(group_pol_3_qrect);
     ui_game.graphicsView_4->setGeometry(group_pol_4_qrect);
+    ui_game.pushButton_4->setGeometry(group_pol_4_qrect);
     ui_game.graphicsView_5->setGeometry(group_pol_5_qrect);
+    ui_game.pushButton_5->setGeometry(group_pol_5_qrect);
     ui_game.graphicsView_6->setGeometry(group_pol_6_qrect);
+    ui_game.pushButton_6->setGeometry(group_pol_6_qrect);
     ui_game.graphicsView_7->setGeometry(group_pol_7_qrect);
+    ui_game.pushButton_7->setGeometry(group_pol_7_qrect);
     ui_game.graphicsView_8->setGeometry(group_pol_8_qrect);
+    ui_game.pushButton_8->setGeometry(group_pol_8_qrect);
     ui_game.graphicsView_9->setGeometry(group_pol_9_qrect);
+    ui_game.pushButton_9->setGeometry(group_pol_9_qrect);
     time_t now = time(0);
     tm* ltm = localtime(&now);
     int secs = ltm->tm_sec;
@@ -152,7 +175,6 @@ void hariki2::update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, kru
     ui_game.graphicsView_7->setPixmap(g.select_pix(g.ver_color(), g.ver_tone()));
     ui_game.graphicsView_8->setPixmap(h.select_pix(h.ver_color(), h.ver_tone()));
     ui_game.graphicsView_9->setPixmap(t.select_pix(t.ver_color(), t.ver_tone()));
-    
 }
 
 krug hariki2::select_yes(int stav)
@@ -258,12 +280,19 @@ void hariki2::new_game_slot()
     int sl = rand();
     povt = 0;
    pov = sl % 30;
-    timer->start(500);
+   if (pov == 1) pov = 2;
+   else;
+   open = false;
+    timer->start(1000);
 }
 
 void hariki2::slotTimerAlarm()
 {
-    if (pov == povt) timer->stop();
+    if (pov == povt)
+    {
+        timer->stop();
+        open = true;
+    }
     else {
         krug11.init();
         krug12.init();
@@ -274,7 +303,87 @@ void hariki2::slotTimerAlarm()
         krug31.init();
         krug32.init();
         krug33.init();
-        if (povt == 1) Sleep(10000);
+        if (povt == 0);
+        else
+        {
+            if ((krug11.ver_color() == select_yes(yesp).ver_color()) && (krug11.ver_tone() == select_yes(yesp).ver_tone())&&(yesp!=0))
+            {
+                while ((krug11.ver_color() == select_yes(yesp).ver_color()) && (krug11.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug11.init();
+                }
+            }
+            else;
+            if ((krug12.ver_color() == select_yes(yesp).ver_color()) && (krug12.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 1))
+            {
+                while ((krug12.ver_color() == select_yes(yesp).ver_color()) && (krug12.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug12.init();
+                }
+            }
+            else;
+            if ((krug13.ver_color() == select_yes(yesp).ver_color()) && (krug13.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 2))
+            {
+                while ((krug13.ver_color() == select_yes(yesp).ver_color()) && (krug13.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug13.init();
+                }
+            }
+            else;
+            if ((krug21.ver_color() == select_yes(yesp).ver_color()) && (krug21.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 3))
+            {
+                while ((krug21.ver_color() == select_yes(yesp).ver_color()) && (krug21.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug21.init();
+                }
+            }
+            else;
+            if ((krug22.ver_color() == select_yes(yesp).ver_color()) && (krug22.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 4))
+            {
+                while ((krug22.ver_color() == select_yes(yesp).ver_color()) && (krug22.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug22.init();
+                }
+            }
+            else;
+            if ((krug23.ver_color() == select_yes(yesp).ver_color()) && (krug23.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 5))
+            {
+                while ((krug23.ver_color() == select_yes(yesp).ver_color()) && (krug23.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug23.init();
+                }
+            }
+            else;
+            if ((krug31.ver_color() == select_yes(yesp).ver_color()) && (krug31.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 6))
+            {
+                while ((krug31.ver_color() == select_yes(yesp).ver_color()) && (krug31.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug31.init();
+                }
+            }
+            else;
+            if ((krug32.ver_color() == select_yes(yesp).ver_color()) && (krug32.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 7))
+            {
+                while ((krug32.ver_color() == select_yes(yesp).ver_color()) && (krug32.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                     krug32.init();
+                }
+            }
+            else;
+            if ((krug33.ver_color() == select_yes(yesp).ver_color()) && (krug33.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 8))
+            {
+                while ((krug33.ver_color() == select_yes(yesp).ver_color()) && (krug33.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug33.init();
+                }
+            }
+            else;
+        }
+    
+        
+        if (povt == 1)  {
+            Sleep(10000);
+        }
         else;
         povt = povt + 1;
         if (povt == 1) 
@@ -283,6 +392,15 @@ void hariki2::slotTimerAlarm()
             yesp = tempy % 9;
             yesp1 = select_yes(yesp).ver_color();
             yesp2 = select_yes(yesp).ver_tone();
+            QString rezult(QString::fromLocal8Bit("Следите за "));
+            QString info;
+            info = krug11.select_name_pix(yesp1, yesp2);
+            QString info2(QString::fromLocal8Bit(" ( "));
+            QString info3(QString::fromLocal8Bit(" )"));
+            QString yespz = QString::number(yesp+1);
+            QString info4 = rezult + info + info2 + yespz + info3;
+            rez12 = rezult + info;
+            ui_game.lineEdit->setText(info4);
         }
         else
         {
@@ -290,7 +408,276 @@ void hariki2::slotTimerAlarm()
             yesprez = tempy % 9;
             write_yes(yesp1, yesp2, yesprez);
             yesp = yesprez;
+            if ((krug11.ver_color() == select_yes(yesp).ver_color()) && (krug11.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 0))
+            {
+                while ((krug11.ver_color() == select_yes(yesp).ver_color()) && (krug11.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug11.init();
+                }
+            }
+            else;
+            if ((krug12.ver_color() == select_yes(yesp).ver_color()) && (krug12.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 1))
+            {
+                while ((krug12.ver_color() == select_yes(yesp).ver_color()) && (krug12.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug12.init();
+                }
+            }
+            else;
+            if ((krug13.ver_color() == select_yes(yesp).ver_color()) && (krug13.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 2))
+            {
+                while ((krug13.ver_color() == select_yes(yesp).ver_color()) && (krug13.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug13.init();
+                }
+            }
+            else;
+            if ((krug21.ver_color() == select_yes(yesp).ver_color()) && (krug21.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 3))
+            {
+                while ((krug21.ver_color() == select_yes(yesp).ver_color()) && (krug21.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug21.init();
+                }
+            }
+            else;
+            if ((krug22.ver_color() == select_yes(yesp).ver_color()) && (krug22.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 4))
+            {
+                while ((krug22.ver_color() == select_yes(yesp).ver_color()) && (krug22.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug22.init();
+                }
+            }
+            else;
+            if ((krug23.ver_color() == select_yes(yesp).ver_color()) && (krug23.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 5))
+            {
+                while ((krug23.ver_color() == select_yes(yesp).ver_color()) && (krug23.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug23.init();
+                }
+            }
+            else;
+            if ((krug31.ver_color() == select_yes(yesp).ver_color()) && (krug31.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 6))
+            {
+                while ((krug31.ver_color() == select_yes(yesp).ver_color()) && (krug31.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug31.init();
+                }
+            }
+            else;
+            if ((krug32.ver_color() == select_yes(yesp).ver_color()) && (krug32.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 7))
+            {
+                while ((krug32.ver_color() == select_yes(yesp).ver_color()) && (krug32.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug32.init();
+                }
+            }
+            else;
+            if ((krug33.ver_color() == select_yes(yesp).ver_color()) && (krug33.ver_tone() == select_yes(yesp).ver_tone()) && (yesp != 8))
+            {
+                while ((krug33.ver_color() == select_yes(yesp).ver_color()) && (krug33.ver_tone() == select_yes(yesp).ver_tone()))
+                {
+                    krug33.init();
+                }
+            }
+            else;
+            ui_game.lineEdit->setText(rez12);
         }
         update(krug11, krug12, krug13, krug21, krug22, krug23, krug31, krug32, krug33);
     }
 }
+
+void hariki2::slot1()
+{
+    if (open == true)
+    {
+        int select_user = 0;
+        if (select_user == yesp)
+        {
+            ui_game.graphicsView->setPixmap(krug11.select_pix(5, 1));
+            score_up(100);
+            ui_game.lcdNumber->display(score);
+            open = false;
+        }
+        else
+        {
+            ui_game.graphicsView->setPixmap(krug11.select_pix(5, 2));
+            open = false;
+        };
+    }
+    else;
+}
+
+void hariki2::slot2()
+{
+    if (open == true)
+    {
+        int select_user = 1;
+        if (select_user == yesp)
+        {
+            ui_game.graphicsView_2->setPixmap(krug11.select_pix(5, 1));
+            score_up(100);
+            ui_game.lcdNumber->display(score);
+            open = false;
+        }
+        else
+        {
+            ui_game.graphicsView_2->setPixmap(krug11.select_pix(5, 2));
+            open = false;
+        };
+    }
+    else;
+}
+
+void hariki2::slot3()
+{
+    if (open == true)
+    {
+        int select_user = 2;
+        if (select_user == yesp)
+        {
+            ui_game.graphicsView_3->setPixmap(krug11.select_pix(5, 1));
+            score_up(100);
+            ui_game.lcdNumber->display(score);
+            open = false;
+        }
+        else
+        {
+            ui_game.graphicsView_3->setPixmap(krug11.select_pix(5, 2));  
+            open = false;
+        };
+    }
+    else;
+}
+
+void hariki2::slot4()
+{
+    if (open == true)
+    {
+        int select_user = 3;
+        if (select_user == yesp)
+        {
+            ui_game.graphicsView_4->setPixmap(krug11.select_pix(5, 1));
+            score_up(100);
+            ui_game.lcdNumber->display(score);
+            open = false;
+        }
+        else
+        {
+            ui_game.graphicsView_4->setPixmap(krug11.select_pix(5, 2));
+            open = false;
+        };
+    }
+    else;
+}
+
+void hariki2::slot5()
+{
+    if (open == true)
+    {
+        int select_user = 4;
+        if (select_user == yesp)
+        {
+            ui_game.graphicsView_5->setPixmap(krug11.select_pix(5, 1));
+            score_up(100);
+            ui_game.lcdNumber->display(score);
+            open = false;
+        }
+        else
+        {
+            ui_game.graphicsView_5->setPixmap(krug11.select_pix(5, 2));
+            open = false;
+        };
+    }
+    else;
+}
+
+void hariki2::slot6()
+{
+    if (open == true)
+    {
+        int select_user = 5;
+        if (select_user == yesp)
+        {
+            ui_game.graphicsView_6->setPixmap(krug11.select_pix(5, 1));
+            score_up(100);
+            ui_game.lcdNumber->display(score);
+            open = false;
+        }
+        else
+        {
+            ui_game.graphicsView_6->setPixmap(krug11.select_pix(5, 2));
+            open = false;
+        };
+    }
+    else;
+}
+
+void hariki2::slot7()
+{
+    if (open == true)
+    {
+        int select_user = 6;
+        if (select_user == yesp)
+        {
+            ui_game.graphicsView_7->setPixmap(krug11.select_pix(5, 1));
+            score_up(100);
+            ui_game.lcdNumber->display(score);
+            open = false;
+        }
+        else
+        {
+            ui_game.graphicsView_7->setPixmap(krug11.select_pix(5, 2));
+            open = false;
+        };
+    }
+    else;
+}
+
+void hariki2::slot8()
+{
+    if (open == true)
+    {
+        int select_user = 7;
+        if (select_user == yesp)
+        {
+            ui_game.graphicsView_8->setPixmap(krug11.select_pix(5, 1));
+            score_up(100);
+            ui_game.lcdNumber->display(score);
+            open = false;
+        }
+        else
+        {
+            ui_game.graphicsView_8->setPixmap(krug11.select_pix(5, 2));
+            open = false;
+        };
+    }
+    else;
+}
+
+void hariki2::slot9()
+{
+    if (open == true)
+    {
+        int select_user = 8;
+        if (select_user == yesp)
+        {
+            ui_game.graphicsView_9->setPixmap(krug11.select_pix(5, 1));
+            score_up(100);
+            ui_game.lcdNumber->display(score);
+            open = false;
+        }
+        else
+        {
+            ui_game.graphicsView_9->setPixmap(krug11.select_pix(5, 2));
+            open = false;
+        };
+    }
+    else;
+}
+
+void hariki2::score_up(int scores)
+{
+    score = score + scores;
+
+}
+
