@@ -1,6 +1,3 @@
 ﻿  hariki2.cpp
-  main.cpp
-  unitest.cpp
-C:\Users\Дмитрий\Documents\GitHub\Sambarling_corp\games\hariki2.cpp(249): warning C4715: hariki2::select_yes: значение возвращается не при всех путях выполнения
-  moc_hariki2.cpp
-  hariki2.vcxproj -> C:\Users\Дмитрий\Documents\GitHub\Sambarling_corp\games\x64\Debug\hariki2.exe
+C:\Users\NoBody\Documents\GitHub\Sambarling_corp\games\hariki2.cpp(249): warning C4715: hariki2::select_yes: значение возвращается не при всех путях выполнения
+  hariki2.vcxproj -> C:\Users\NoBody\Documents\GitHub\Sambarling_corp\games\x64\Debug\hariki2.exe

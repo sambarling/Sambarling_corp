@@ -68,6 +68,11 @@ public:
     int hir;
     int cx;
     int cy;
+    int cn1;
+    int cny1;
+    int del_cn1;
+    int hir_cn;
+    int cn_1;
     bool start_status;
     bool open;
     bool status_pol;

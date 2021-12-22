@@ -3,3 +3,4 @@ C:\Users\Дмитрий\source\repos\hariki2\x64\Debug\hariki2.exe
 H:\hariki2\x64\Debug\hariki2.exe
 E:\личное\учеба\IV курс\I\Зыков\x64\Debug\hariki2.exe
 C:\Users\Дмитрий\Documents\GitHub\Sambarling_corp\games\x64\Debug\hariki2.exe
+C:\Users\NoBody\Documents\GitHub\Sambarling_corp\games\x64\Debug\hariki2.exe

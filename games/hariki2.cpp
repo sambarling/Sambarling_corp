@@ -29,7 +29,6 @@ hariki2::hariki2(QWidget *parent)
     int tnas_cx;
     int tnas_cy;
     int del_cn;
-    int hir_cn;
     tnas_cx = cx / 10;
     tnas_cy = cy / 10;
     tna_cx = (cx / 2) - tnas_cx;
@@ -46,9 +45,10 @@ hariki2::hariki2(QWidget *parent)
     int logo_cy = cy - logo_hir;
     QRect groupbox_logo(logo_cx, logo_cy, logo_del, logo_hir);
     ui.groupBox_3->setGeometry(groupbox_logo);
-    int cn1 = (del_cn)+tna_cx;
-    int cny1 = (hir_cn)+tna_cy;
-    int del_cn1 = del * 0.8;
+    cn1 = (del_cn)+tna_cx;
+    cn_1 = cn1;
+    cny1 = (hir_cn)+tna_cy;
+    del_cn1 = del * 0.8;
     QRect cn(cn1, cny1, del_cn1, hir_cn);
     ui.pushButton->setGeometry(cn);
     cn1 = (del_cn)+tna_cx;
@@ -937,7 +937,7 @@ void hariki2::test_mow()
     }
     else if (test_select_stat == AOE_dio)
     {
-        bool test3 = uni.test_AOE(cx, cy, del, hir, tna_cx, tna_cy);
+        bool test3 = uni.test_AOE(cx, cy,del,hir,tna_cx, tna_cy,cn_1,cny1,del_cn1,hir_cn);
         if (test3==false)
         {
             ui_test.test_rez->setText(QString::fromLocal8Bit("элементы раставлены неправильно"));
