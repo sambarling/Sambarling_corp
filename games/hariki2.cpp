@@ -19,19 +19,15 @@ hariki2::hariki2(QWidget *parent)
     this->showFullScreen();
     HDC hdcScreen = GetDC(NULL);
     dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
-    int cx = GetSystemMetricsForDpi(SM_CXFULLSCREEN, dpis);
-    int cy = GetSystemMetricsForDpi(SM_CYVIRTUALSCREEN, dpis);
+    cx = GetSystemMetricsForDpi(SM_CXFULLSCREEN, dpis);
+    cy = GetSystemMetricsForDpi(SM_CYVIRTUALSCREEN, dpis);
     double dpix = 96.00 / dpis;
     cx = cx * dpix;
     cy = cy * dpix;
     QRect test(0, 0, cx, cy);
     ui.groupBox->setGeometry(test);
-    int tna_cx;
-    int tna_cy;
     int tnas_cx;
     int tnas_cy;
-    int del;
-    int hir;
     int del_cn;
     int hir_cn;
     tnas_cx = cx / 10;
@@ -95,8 +91,8 @@ void hariki2::start_game_slot()
     game->showFullScreen();
     HDC hdcScreen = GetDC(NULL);
     dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
-    int cx = GetSystemMetricsForDpi(SM_CXFULLSCREEN, dpis);
-    int cy = GetSystemMetricsForDpi(SM_CYVIRTUALSCREEN, dpis);
+    cx = GetSystemMetricsForDpi(SM_CXFULLSCREEN, dpis);
+    cy = GetSystemMetricsForDpi(SM_CYVIRTUALSCREEN, dpis);
     double dpix = 96.00 / dpis;
     cx = cx * dpix;
     cy = cy * dpix;
@@ -920,7 +916,7 @@ void hariki2::DPI_botton()
     if (rez_dpi_st == 100)
     {
         ui_test.test_rez->setText(QString::fromLocal8Bit("Модуль DPI работает неправильно"));
-        
+
     }
     else
     {
@@ -932,11 +928,36 @@ void hariki2::DPI_botton()
 void hariki2::test_mow()
 {
     QString DPI_dio("DPI");
+    QString AOE_dio("AOE");
     QString test_select_stat(ui_test.test_select->currentText().toLocal8Bit());
     if (test_select_stat == DPI_dio)
     {
         DPI_dialog->show();
         connect(DPI.pushButton, SIGNAL(clicked()), this, SLOT(DPI_botton()));
+    }
+    else if (test_select_stat == AOE_dio)
+    {
+        int test1 = tna_cx + del;
+        int test2 = tna_cy + hir;
+        bool test3 = true;
+        if (test1 > cx)
+        {
+            test3 = false;
+        }
+        else if (test2 > cy)
+        {
+            test3 = false;
+        }
+        else;
+        if (test3==false)
+        {
+            ui_test.test_rez->setText(QString::fromLocal8Bit("элементы раставлены неправильно"));
+
+        }
+        else
+        {
+            ui_test.test_rez->setText(QString::fromLocal8Bit("элементы раставлены правильно"));
+        };
     }
     else;
 }

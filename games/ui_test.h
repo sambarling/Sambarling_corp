@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'testYVjedF.ui'
+** Form generated from reading UI file 'testXgfXjk.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.15.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef TESTYVJEDF_H
-#define TESTYVJEDF_H
+#ifndef TESTXGFXJK_H
+#define TESTXGFXJK_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -49,6 +49,7 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         test_select = new QComboBox(groupBox);
         test_select->addItem(QString());
+        test_select->addItem(QString());
         test_select->setObjectName(QString::fromUtf8("test_select"));
 
         gridLayout_2->addWidget(test_select, 0, 0, 1, 1);
@@ -88,6 +89,7 @@ public:
         Test->setWindowTitle(QCoreApplication::translate("Test", "Dialog", nullptr));
         groupBox->setTitle(QString());
         test_select->setItemText(0, QCoreApplication::translate("Test", "DPI", nullptr));
+        test_select->setItemText(1, QCoreApplication::translate("Test", "AOE", nullptr));
 
         pushButton->setText(QCoreApplication::translate("Test", "\320\267\320\260\320\277\321\203\321\201\321\202\320\270\321\202\321\214 \321\202\320\265\321\201\321\202", nullptr));
         groupBox_2->setTitle(QString());
@@ -101,4 +103,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // TESTYVJEDF_H
+#endif // TESTXGFXJK_H

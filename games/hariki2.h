@@ -62,6 +62,12 @@ public:
     int hour;
     int min;
     int dpis;
+    int tna_cx;
+    int tna_cy;
+    int del;
+    int hir;
+    int cx;
+    int cy;
     bool start_status;
     bool open;
     bool status_pol;
