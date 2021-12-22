@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'testqRTtqJ.ui'
+** Form generated from reading UI file 'testYVjedF.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.15.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef TESTQRTTQJ_H
-#define TESTQRTTQJ_H
+#ifndef TESTYVJEDF_H
+#define TESTYVJEDF_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -15,6 +15,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTextEdit>
 
@@ -28,6 +29,7 @@ public:
     QGridLayout *gridLayout_2;
     QComboBox *test_select;
     QSpacerItem *verticalSpacer;
+    QPushButton *pushButton;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout_3;
     QTextEdit *test_rez;
@@ -54,6 +56,11 @@ public:
         verticalSpacer = new QSpacerItem(20, 118, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout_2->addItem(verticalSpacer, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(groupBox);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout_2->addWidget(pushButton, 2, 0, 1, 1);
 
 
         gridLayout->addWidget(groupBox, 0, 0, 1, 1);
@@ -82,6 +89,7 @@ public:
         groupBox->setTitle(QString());
         test_select->setItemText(0, QCoreApplication::translate("Test", "DPI", nullptr));
 
+        pushButton->setText(QCoreApplication::translate("Test", "\320\267\320\260\320\277\321\203\321\201\321\202\320\270\321\202\321\214 \321\202\320\265\321\201\321\202", nullptr));
         groupBox_2->setTitle(QString());
     } // retranslateUi
 
@@ -93,4 +101,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // TESTQRTTQJ_H
+#endif // TESTYVJEDF_H

@@ -94,4 +94,5 @@ private slots:
     void push_exit2();
     void name_but();
     void DPI_botton();
+    void test_mow();
 };

@@ -288,19 +288,12 @@ void hariki2::write_yes(int color, int tone, int stav)
 
 void hariki2::keyPressEvent(QKeyEvent* event)
 {
-    QString DPI_dio("DPI");
     quint32 key_active;
     key_active = event->nativeScanCode();
     if (key_active == 41)
     {
+        connect(ui_test.pushButton, SIGNAL(clicked()), this, SLOT(test_mow()));
         test_ui_init->show();
-        QString test_select_stat(ui_test.test_select->currentText().toLocal8Bit());
-        if (test_select_stat == DPI_dio)
-        {
-            DPI_dialog->show();
-            connect(DPI.pushButton, SIGNAL(clicked()), this, SLOT(DPI_botton()));
-        }
-        else;
     }
     else;
 }
@@ -934,6 +927,18 @@ void hariki2::DPI_botton()
         ui_test.test_rez->setText(QString::fromLocal8Bit("DPI определен правильно"));
     };
     DPI_dialog->close();
+}
+
+void hariki2::test_mow()
+{
+    QString DPI_dio("DPI");
+    QString test_select_stat(ui_test.test_select->currentText().toLocal8Bit());
+    if (test_select_stat == DPI_dio)
+    {
+        DPI_dialog->show();
+        connect(DPI.pushButton, SIGNAL(clicked()), this, SLOT(DPI_botton()));
+    }
+    else;
 }
 
 
