@@ -6,6 +6,8 @@ hariki2::hariki2(QWidget *parent)
     ui.setupUi(this);
     ui_name.setupUi(names);
     ui_game.setupUi(game);
+    ui_test.setupUi(test_ui_init);
+    DPI.setupUi(DPI_dialog);
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
     timer2 = new QTimer();
@@ -16,7 +18,7 @@ hariki2::hariki2(QWidget *parent)
     start_status = false;
     this->showFullScreen();
     HDC hdcScreen = GetDC(NULL);
-    int dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
+    dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
     int cx = GetSystemMetricsForDpi(SM_CXFULLSCREEN, dpis);
     int cy = GetSystemMetricsForDpi(SM_CYVIRTUALSCREEN, dpis);
     double dpix = 96.00 / dpis;
@@ -92,7 +94,7 @@ void hariki2::start_game_slot()
     connect(ui_game.pushButton, SIGNAL(clicked()), this, SLOT(push_exit2()));
     game->showFullScreen();
     HDC hdcScreen = GetDC(NULL);
-    int dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
+    dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
     int cx = GetSystemMetricsForDpi(SM_CXFULLSCREEN, dpis);
     int cy = GetSystemMetricsForDpi(SM_CYVIRTUALSCREEN, dpis);
     double dpix = 96.00 / dpis;
@@ -282,6 +284,25 @@ void hariki2::write_yes(int color, int tone, int stav)
         krug33.writes(color, tone);
         break;
     }
+}
+
+void hariki2::keyPressEvent(QKeyEvent* event)
+{
+    QString DPI_dio("DPI");
+    quint32 key_active;
+    key_active = event->nativeScanCode();
+    if (key_active == 41)
+    {
+        test_ui_init->show();
+        QString test_select_stat(ui_test.test_select->currentText().toLocal8Bit());
+        if (test_select_stat == DPI_dio)
+        {
+            DPI_dialog->show();
+            connect(DPI.pushButton, SIGNAL(clicked()), this, SLOT(DPI_botton()));
+        }
+        else;
+    }
+    else;
 }
 
 void hariki2::record_slot()
@@ -897,6 +918,22 @@ void hariki2::name_but()
         msgBox.setDefaultButton(QMessageBox::Ok);
         msgBox.exec();
     };
+}
+
+void hariki2::DPI_botton()
+{
+    double dpi_original = DPI.lineEdit->text().toDouble();
+    double rez_dpi_st = uni.test_dpi(dpis,dpi_original);
+    if (rez_dpi_st == 100)
+    {
+        ui_test.test_rez->setText(QString::fromLocal8Bit("Модуль DPI работает неправильно"));
+        
+    }
+    else
+    {
+        ui_test.test_rez->setText(QString::fromLocal8Bit("DPI определен правильно"));
+    };
+    DPI_dialog->close();
 }
 
 

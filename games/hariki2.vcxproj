@@ -118,6 +118,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="table_itemtetris.cpp" />
+    <ClCompile Include="unitest.cpp" />
     <QtRcc Include="hariki2.qrc" />
     <QtRcc Include="hariki_and_tetris.qrc" />
     <QtUic Include="hariki2.ui" />
@@ -131,10 +132,12 @@
     <ClInclude Include="krug.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="table_itemtetris.h" />
+    <ClInclude Include="ui_DPI.h" />
     <ClInclude Include="ui_hariki_and_tetris.h" />
     <ClInclude Include="ui_name_Dio.h" />
     <ClInclude Include="ui_record.h" />
     <ClInclude Include="ui_test.h" />
+    <ClInclude Include="unitest.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="hariki2.rc" />

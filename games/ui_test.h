@@ -1,32 +1,36 @@
 /********************************************************************************
-** Form generated from reading UI file 'testzyfKNU.ui'
+** Form generated from reading UI file 'testqRTtqJ.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.2
+** Created by: Qt User Interface Compiler version 5.15.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef TESTZYFKNU_H
-#define TESTZYFKNU_H
+#ifndef TESTQRTTQJ_H
+#define TESTQRTTQJ_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
-#include <QtWidgets/QLabel>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Test
 {
 public:
-    QGroupBox *groupBox_2;
-    QLabel *label_2;
-    QLabel *label_3;
+    QGridLayout *gridLayout;
     QGroupBox *groupBox;
-    QComboBox *comboBox;
-    QLabel *label;
+    QGridLayout *gridLayout_2;
+    QComboBox *test_select;
+    QSpacerItem *verticalSpacer;
+    QGroupBox *groupBox_2;
+    QGridLayout *gridLayout_3;
+    QTextEdit *test_rez;
 
     void setupUi(QDialog *Test)
     {
@@ -35,24 +39,37 @@ public:
         Test->resize(404, 185);
         Test->setMinimumSize(QSize(404, 185));
         Test->setMaximumSize(QSize(404, 185));
-        groupBox_2 = new QGroupBox(Test);
-        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(210, 10, 191, 171));
-        label_2 = new QLabel(groupBox_2);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(10, 10, 61, 16));
-        label_3 = new QLabel(groupBox_2);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(20, 60, 49, 16));
+        gridLayout = new QGridLayout(Test);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         groupBox = new QGroupBox(Test);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(9, 9, 201, 171));
-        comboBox = new QComboBox(groupBox);
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(30, 60, 81, 22));
-        label = new QLabel(groupBox);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 20, 81, 16));
+        gridLayout_2 = new QGridLayout(groupBox);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        test_select = new QComboBox(groupBox);
+        test_select->addItem(QString());
+        test_select->setObjectName(QString::fromUtf8("test_select"));
+
+        gridLayout_2->addWidget(test_select, 0, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(20, 118, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_2->addItem(verticalSpacer, 1, 0, 1, 1);
+
+
+        gridLayout->addWidget(groupBox, 0, 0, 1, 1);
+
+        groupBox_2 = new QGroupBox(Test);
+        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
+        gridLayout_3 = new QGridLayout(groupBox_2);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        test_rez = new QTextEdit(groupBox_2);
+        test_rez->setObjectName(QString::fromUtf8("test_rez"));
+
+        gridLayout_3->addWidget(test_rez, 0, 0, 1, 1);
+
+
+        gridLayout->addWidget(groupBox_2, 0, 1, 1, 1);
+
 
         retranslateUi(Test);
 
@@ -62,11 +79,10 @@ public:
     void retranslateUi(QDialog *Test)
     {
         Test->setWindowTitle(QCoreApplication::translate("Test", "Dialog", nullptr));
-        groupBox_2->setTitle(QString());
-        label_2->setText(QCoreApplication::translate("Test", "\320\240\320\265\320\267\321\203\320\273\321\214\321\202\320\260\321\202", nullptr));
-        label_3->setText(QCoreApplication::translate("Test", "\320\230\320\275\321\204\320\276", nullptr));
         groupBox->setTitle(QString());
-        label->setText(QCoreApplication::translate("Test", "\320\222\321\213\320\261\320\265\321\200\320\270\321\202\320\265 \321\202\320\265\321\201\321\202", nullptr));
+        test_select->setItemText(0, QCoreApplication::translate("Test", "DPI", nullptr));
+
+        groupBox_2->setTitle(QString());
     } // retranslateUi
 
 };
@@ -77,4 +93,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // TESTZYFKNU_H
+#endif // TESTQRTTQJ_H

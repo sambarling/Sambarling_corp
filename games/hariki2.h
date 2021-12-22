@@ -17,6 +17,10 @@
 #include <direct.h>
 #include <sstream>
 #include <string>
+#include <QKeyEvent>
+#include "ui_test.h"
+#include "ui_DPI.h"
+#include "unitest.h"
 using namespace std;
 
 class hariki2 : public QMainWindow
@@ -27,6 +31,8 @@ public:
     hariki2(QWidget *parent = Q_NULLPTR);
     QMainWindow* game = new QMainWindow;
     QDialog* names = new QDialog;
+    QDialog* test_ui_init = new QDialog;
+    QDialog* DPI_dialog = new QDialog;
     void update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t);
     krug select_yes(int stav);
     void write_yes(int color, int tone, int stav);
@@ -55,15 +61,19 @@ public:
     int time_s;
     int hour;
     int min;
+    int dpis;
     bool start_status;
     bool open;
     bool status_pol;
+    unitest uni;
 private:
     Ui::hariki2Class ui;
     Ui::record_table ui_record;
     Ui::hariki_and_tetrisClass ui_game;
     Ui::Name_Dio ui_name;
-    Ui::Test ui_
+    Ui::Test ui_test;
+    Ui::Dialog DPI;
+    void keyPressEvent(QKeyEvent* event);
 private slots:
     void start_game_slot();
     void record_slot();
@@ -83,4 +93,5 @@ private slots:
     void timer_slot();
     void push_exit2();
     void name_but();
+    void DPI_botton();
 };

@@ -49,6 +49,9 @@
     <ClCompile Include="table_itemtetris.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="unitest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ui_hariki_and_tetris.h">
@@ -70,6 +73,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ui_test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unitest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_DPI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
