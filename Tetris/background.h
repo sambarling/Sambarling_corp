@@ -19,5 +19,6 @@ private:
 	QPixmap pic31=(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/fon3.png");
 	QPixmap pic32=(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/fon31.png");
 	int pictures = 1;
+	int test;
 };
 
