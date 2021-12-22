@@ -2,5 +2,5 @@
 # Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
 ################################################################################
 
-/games/.vs/hariki2/v17/Browse.VC.opendb
-/.vs/Sambarling_corp/v17/Browse.VC.opendb
+/games/.vs/
+/.vs/
