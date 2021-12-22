@@ -937,18 +937,7 @@ void hariki2::test_mow()
     }
     else if (test_select_stat == AOE_dio)
     {
-        int test1 = tna_cx + del;
-        int test2 = tna_cy + hir;
-        bool test3 = true;
-        if (test1 > cx)
-        {
-            test3 = false;
-        }
-        else if (test2 > cy)
-        {
-            test3 = false;
-        }
-        else;
+        bool test3 = uni.test_AOE(cx, cy, del, hir, tna_cx, tna_cy);
         if (test3==false)
         {
             ui_test.test_rez->setText(QString::fromLocal8Bit("элементы раставлены неправильно"));
