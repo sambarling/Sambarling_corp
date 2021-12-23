@@ -955,6 +955,6 @@ void hariki2::test_mow()
 void hariki2::score_up(int scores)
 {
     score = score + scores;
-
+    int test = 777;
 }
 
