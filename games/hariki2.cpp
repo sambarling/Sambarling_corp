@@ -1,23 +1,23 @@
 #include "hariki2.h"
 
-hariki2::hariki2(QWidget *parent)
+hariki2::hariki2(QWidget *parent)//основное меню
     : QMainWindow(parent)
 {
-    ui.setupUi(this);
+    ui.setupUi(this); //инициализация ui
     ui_name.setupUi(names);
     ui_game.setupUi(game);
     ui_test.setupUi(test_ui_init);
     DPI.setupUi(DPI_dialog);
-    timer = new QTimer();
+    timer = new QTimer();// инициализация таймеров
     connect(timer, SIGNAL(timeout()), this, SLOT(slotTimerAlarm()));
     timer2 = new QTimer();
-    connect(timer2, SIGNAL(timeout()), this, SLOT(timer_slot()));
+    connect(timer2, SIGNAL(timeout()), this, SLOT(timer_slot()));//подключение кнопок
     connect(ui.pushButton, SIGNAL(clicked()), this, SLOT(name_but()));
     connect(ui.pushButton_2, SIGNAL(clicked()), this, SLOT(record_slot()));
     connect(ui.pushButton_3, SIGNAL(clicked()), this, SLOT(exit_slot()));
     start_status = false;
     this->showFullScreen();
-    HDC hdcScreen = GetDC(NULL);
+    HDC hdcScreen = GetDC(NULL);// система DPI
     dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
     cx = GetSystemMetricsForDpi(SM_CXFULLSCREEN, dpis);
     cy = GetSystemMetricsForDpi(SM_CYVIRTUALSCREEN, dpis);
@@ -25,7 +25,7 @@ hariki2::hariki2(QWidget *parent)
     cx = cx * dpix;
     cy = cy * dpix;
     QRect test(0, 0, cx, cy);
-    ui.groupBox->setGeometry(test);
+    ui.groupBox->setGeometry(test); //инициализация главного меню
     int tnas_cx;
     int tnas_cy;
     int del_cn;
@@ -63,7 +63,7 @@ hariki2::hariki2(QWidget *parent)
     ui.pushButton_3->setGeometry(cn3);
     time_t now = time(0);
     tm* ltm = localtime(&now);
-    hour = ltm->tm_hour;
+    hour = ltm->tm_hour;//инициализация рандома
     if ((hour == 22) || (hour == 23))
     {
         hour = 0;
@@ -72,12 +72,12 @@ hariki2::hariki2(QWidget *parent)
     min = ltm->tm_min;
 }
 
-void hariki2::start_game_slot()
+void hariki2::start_game_slot()//окно игры
 {
     name = ui_name.lineEdit->text();
     names->close();
-    game->show();
-    connect(ui_game.start_game, SIGNAL(clicked()), this, SLOT(new_game_slot()));
+    game->show();//подготовка к запуску окна
+    connect(ui_game.start_game, SIGNAL(clicked()), this, SLOT(new_game_slot()));//подключение кнопок
     connect(ui_game.pushButton_1, SIGNAL(clicked()), this, SLOT(slot1()));
     connect(ui_game.pushButton_2, SIGNAL(clicked()), this, SLOT(slot2()));
     connect(ui_game.pushButton_3, SIGNAL(clicked()), this, SLOT(slot3()));
@@ -89,7 +89,7 @@ void hariki2::start_game_slot()
     connect(ui_game.pushButton_9, SIGNAL(clicked()), this, SLOT(slot9()));
     connect(ui_game.pushButton, SIGNAL(clicked()), this, SLOT(push_exit2()));
     game->showFullScreen();
-    HDC hdcScreen = GetDC(NULL);
+    HDC hdcScreen = GetDC(NULL);//система DPI
     dpis = GetDeviceCaps(hdcScreen, LOGPIXELSY);
     cx = GetSystemMetricsForDpi(SM_CXFULLSCREEN, dpis);
     cy = GetSystemMetricsForDpi(SM_CYVIRTUALSCREEN, dpis);
@@ -97,7 +97,7 @@ void hariki2::start_game_slot()
     cx = cx * dpix;
     cy = cy * dpix;
     QRect test(0, 0, cx, cy);
-    ui_game.groupBox->setGeometry(test);
+    ui_game.groupBox->setGeometry(test);//инициализация игрового поля
     int cx_groupbox = cx / 10;
     int cy_groupbox = cy / 10;
     int del_groupbox = cx - (cx_groupbox * 3);
@@ -128,7 +128,6 @@ void hariki2::start_game_slot()
     int exit_slot_y=  (cy / 10) + ((cx / 20) * 4) + 28;
     QRect exit_slot (lcd_x, exit_slot_y, del_lcd, hir_lcd);
     ui_game.pushButton->setGeometry(exit_slot);
-
 
     group_pol_del = (del_groupbox / 14) * 4;
     group_pol_hir = (hir_groupbox / 14) * 4;
@@ -177,7 +176,7 @@ void hariki2::start_game_slot()
     ui_game.pushButton_8->setGeometry(group_pol_8_qrect);
     ui_game.graphicsView_9->setGeometry(group_pol_9_qrect);
     ui_game.pushButton_9->setGeometry(group_pol_9_qrect);
-    time_t now = time(0);
+    time_t now = time(0);//Модуль очистки игрового окна
     tm* ltm = localtime(&now);
     int secs = ltm->tm_sec;
     srand(secs);
@@ -201,7 +200,7 @@ void hariki2::start_game_slot()
     ui_game.lcdNumber->display(0);
 }
 
-void hariki2::update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t)
+void hariki2::update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, krug h, krug t)//вывод на экран новых фигур
 {
     ui_game.graphicsView->setPixmap(a.select_pix(a.ver_color(), a.ver_tone()));
     ui_game.graphicsView_2->setPixmap(b.select_pix(b.ver_color(), b.ver_tone()));
@@ -214,7 +213,7 @@ void hariki2::update(krug a, krug b, krug c, krug d, krug e, krug f, krug g, kru
     ui_game.graphicsView_9->setPixmap(t.select_pix(t.ver_color(), t.ver_tone()));
 }
 
-krug hariki2::select_yes(int stav)
+krug hariki2::select_yes(int stav)//выбор правильной фигуры
 {
     switch (stav)
     {
@@ -248,7 +247,7 @@ krug hariki2::select_yes(int stav)
     }
 }
 
-void hariki2::write_yes(int color, int tone, int stav)
+void hariki2::write_yes(int color, int tone, int stav)//запись правильной фигуры в память
 {
     switch (stav)
     {
@@ -282,7 +281,7 @@ void hariki2::write_yes(int color, int tone, int stav)
     }
 }
 
-void hariki2::keyPressEvent(QKeyEvent* event)
+void hariki2::keyPressEvent(QKeyEvent* event)//серверный режим
 {
     quint32 key_active;
     key_active = event->nativeScanCode();
@@ -294,7 +293,7 @@ void hariki2::keyPressEvent(QKeyEvent* event)
     else;
 }
 
-void hariki2::record_slot()
+void hariki2::record_slot()//таблица результатов
 {
     QDialog* record = new QDialog;
     ui_record.setupUi(record);
@@ -319,14 +318,13 @@ void hariki2::record_slot()
     file.close();
 }
 
-void hariki2::exit_slot()
+void hariki2::exit_slot()//выход
 {
     QMainWindow::close();
 }
 
-void hariki2::new_game_slot()
+void hariki2::new_game_slot()//начало игры
 {
-   //------------------------console game-------------------------------------------------------
    int sl = rand();
    povt = 0;
    pov = sl % 24;
@@ -378,7 +376,7 @@ void hariki2::new_game_slot()
     else;
 }
 
-void hariki2::slotTimerAlarm()
+void hariki2::slotTimerAlarm()//перемешивание фигур
 {
     if (pov == povt)
     {
@@ -474,7 +472,7 @@ void hariki2::slotTimerAlarm()
     
         
         if (povt == 1)  {
-            Sleep(4000);
+            Sleep(4000);//установка времени ожидание перед перемешиванием
         }
         else;
         povt = povt + 1;
@@ -577,7 +575,7 @@ void hariki2::slotTimerAlarm()
         update(krug11, krug12, krug13, krug21, krug22, krug23, krug31, krug32, krug33);
     }
 }
-
+//слоты клеток поля
 void hariki2::slot1()
 {
     if (open == true)
@@ -767,7 +765,7 @@ void hariki2::slot9()
     else;
 }
 
-void hariki2::timer_slot()
+void hariki2::timer_slot()//таймер игры
 {
     if (time_s == 0)
     {
@@ -850,6 +848,7 @@ void hariki2::timer_slot()
         writeStream << mas[1].get_name() << Qt::endl;
         writeStream << mas[1].get_rez() << Qt::endl;
         file.close();
+        //сохранение игровых данных
         QFile file3(QDir::toNativeSeparators(QApplication::applicationDirPath()) + "/time_z.txt");
         file3.open(QIODevice::WriteOnly);
         QTextStream writeStream2(&file3);
@@ -878,14 +877,14 @@ void hariki2::timer_slot()
 
 }
 
-void hariki2::push_exit2()
+void hariki2::push_exit2()//выход и остановка таймеров
 {
     timer2->stop();
     timer->stop();
     game->close();
 }
 
-void hariki2::name_but()
+void hariki2::name_but()//а можно ли вам играть смертный?
 {
     int hour_z;
     int min_z;
@@ -909,7 +908,7 @@ void hariki2::name_but()
     };
 }
 
-void hariki2::DPI_botton()
+void hariki2::DPI_botton()//DPI!!!!!!!!!!!!!
 {
     double dpi_original = DPI.lineEdit->text().toDouble();
     double rez_dpi_st = uni.test_dpi(dpis,dpi_original);
@@ -925,7 +924,7 @@ void hariki2::DPI_botton()
     DPI_dialog->close();
 }
 
-void hariki2::test_mow()
+void hariki2::test_mow()//юнитесты
 {
     QString DPI_dio("DPI");
     QString AOE_dio("AOE");
@@ -952,9 +951,8 @@ void hariki2::test_mow()
 }
 
 
-void hariki2::score_up(int scores)
+void hariki2::score_up(int scores)//счетчик
 {
     score = score + scores;
-    int test = 777;
 }
 
